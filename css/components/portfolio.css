@@ -1,0 +1,148 @@
+/* Portfolio Section Styles */
+.portfolio-section {
+    padding: 5rem 0;
+}
+
+.portfolio-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.portfolio-tab {
+    background: none;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.portfolio-tab.active {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+.portfolio-item {
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
+    position: relative;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Holographic effect for portfolio items */
+.portfolio-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--holo-gradient-2);
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.portfolio-item:hover::before {
+    opacity: 0.07;
+}
+
+.portfolio-img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 0;
+}
+
+.portfolio-content {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.portfolio-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: -1;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+}
+
+.portfolio-category {
+    display: inline-block;
+    background-color: var(--bg-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle glossy effect for category badges */
+.portfolio-category::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--holo-gradient-1);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.portfolio-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Blog card styling */
+.card {
+    background-color: var(--card-bg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.text-muted {
+    color: var(--text-color) !important;
+    opacity: 0.7;
+}

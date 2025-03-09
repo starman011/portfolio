@@ -1,0 +1,43 @@
+/* Footer Styles */
+.footer {
+    padding: 3rem 0;
+    background-color: var(--footer-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Holographic effect for footer */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--holo-gradient-2);
+    opacity: 0.05;
+    z-index: 0;
+}
+
+/* Fix for footer text colors */
+.footer h4,
+.footer h5,
+.footer p,
+.footer a,
+.footer .text-white {
+    color: var(--text-color) !important;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+/* Make sure the links are visible in both themes */
+.footer a:hover {
+    color: var(--secondary-color) !important;
+    text-decoration: underline;
+}
+
+.footer hr {
+    background-color: var(--border-color);
+    opacity: 0.3;
+}

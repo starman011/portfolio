@@ -1,0 +1,46 @@
+/* Dark Theme Specific Styles */
+body[data-theme="dark"] {
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+    --bg-color: var(--bg-dark);
+    --text-color: #ffffff; /* Explicitly set to white */
+    --card-bg: var(--card-bg-dark);
+    --header-bg: var(--header-bg-dark);
+    --footer-bg: rgba(18, 18, 18, 0.7);
+    --border-color: var(--border-dark);
+
+    /* Holographic Gradients - Dark Theme */
+    --holo-gradient-1: linear-gradient(45deg, rgba(38, 38, 38, 0.9), rgba(61, 95, 115, 0.8), rgba(77, 68, 95, 0.7), rgba(109, 80, 110, 0.8), rgba(38, 38, 38, 0.9));
+    --holo-gradient-2: linear-gradient(135deg, rgba(31, 31, 31, 0.9), rgba(56, 89, 107, 0.8), rgba(73, 94, 101, 0.7), rgba(78, 112, 117, 0.8), rgba(31, 31, 31, 0.9));
+
+    /* Dynamic background variables */
+    --bg-opacity: 0.05;
+    --overlay-opacity: 0.03;
+}
+
+/* Additional text color overrides for dark theme */
+body[data-theme="dark"] p,
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] h3,
+body[data-theme="dark"] h4,
+body[data-theme="dark"] h5,
+body[data-theme="dark"] h6,
+body[data-theme="dark"] .card-text,
+body[data-theme="dark"] .card-title,
+body[data-theme="dark"] label,
+body[data-theme="dark"] .portfolio-title,
+body[data-theme="dark"] .portfolio-content p {
+    color: #ffffff !important;
+}
+
+/* Animation for dark theme transition */
+@keyframes lightToDark {
+    0% { opacity: 0.8; }
+    50% { opacity: 0.4; }
+    100% { opacity: 0.8; }
+}
+
+.dark-theme-active::after {
+    animation: lightToDark 1s forwards;
+}
