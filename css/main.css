@@ -2,21 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Fira+Code:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap');
 
 :root {
-    /* Light Theme Colors */
+    /* Real Dark Theme Colors */
     --primary-color-light: #2c3e50;
     --secondary-color-light: #3498db;
     --bg-light: #f8f9fa;
-    --text-light: #333333;
+    --text-light: #ffffff; /* unused now */
     --card-bg-light: #ffffff;
     --header-bg-light: rgba(255, 255, 255, 0.85);
-    --footer-bg-light: #2c3e50;
-    --border-light: rgba(0, 0, 0, 0.1);
+    --footer-bg-light: #ffffff;
+    --border-light: rgb(255, 255, 255);
 
-    /* Dark Theme Colors */
+    /* Multi Color Theme Colors */
     --primary-color-dark: #bb86fc;
     --secondary-color-dark: #03dac6;
     --bg-dark: #121212;
-    --text-dark: #ffffff;
+    --text-dark: #ffffff; /* unused now */
     --card-bg-dark: rgba(30, 30, 30, 0.85);
     --header-bg-dark: rgba(30, 30, 30, 0.85);
     --footer-bg-dark: rgba(18, 18, 18, 0.9);
@@ -37,7 +37,7 @@ body, input, textarea, button, select, optgroup {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: var(--text-color);
+    color: #ffffff; /* Fixed white text */
     background-color: var(--bg-color);
     transition: color 0.3s ease;
 }
@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
             monospace;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: var(--text-color);
+    color: #ffffff; /* Fixed white text */
     transition: color 0.3s ease;
 }
 
@@ -67,7 +67,7 @@ pre, code, kbd, samp {
     background-color: rgba(0,0,0,0.05);
     border-radius: 4px;
     padding: 0.2em 0.4em;
-    color: var(--text-color);
+    color: #ffffff; /* Fixed white text */
     transition: color 0.3s ease;
 }
 
@@ -91,19 +91,19 @@ pre {
     padding: 0.1em 0.3em;
     border-radius: 3px;
     margin: 0 0.2em;
-    color: var(--text-color);
+    color: #ffffff; /* Fixed white text */
     transition: color 0.3s ease;
 }
 
 /* Add styles for regular text */
 p, span, div, a:not(.btn), label, li {
-    color: var(--text-color);
+    color: #ffffff; /* Fixed white text */
     transition: color 0.3s ease;
 }
 
 /* Add styles for form elements */
 .form-control, .form-control:focus {
-    color: var(--text-color);
+    color: #ffffff; /* Fixed white text */
     background-color: var(--card-bg);
     border-color: var(--border-color);
     transition: color 0.3s ease, background-color 0.3s ease;
@@ -121,4 +121,3 @@ p, span, div, a:not(.btn), label, li {
         font-size: 14px;
     }
 }
-

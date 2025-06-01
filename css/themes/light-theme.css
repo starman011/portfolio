@@ -3,7 +3,7 @@ body[data-theme="light"] {
     --primary-color: var(--primary-color-light);
     --secondary-color: var(--secondary-color-light);
     --bg-color: var(--bg-light);
-    --text-color: #333333; /* Explicitly set to black */
+    --text-color: #ffffff; /* Forced to white */
     --card-bg: var(--card-bg-light);
     --header-bg: var(--header-bg-light);
     --footer-bg: rgba(255, 255, 255, 0.5);
@@ -16,31 +16,4 @@ body[data-theme="light"] {
     /* Dynamic background variables */
     --bg-opacity: 0.04;
     --overlay-opacity: 0.02;
-}
-
-/* Additional text color overrides for light theme */
-body[data-theme="light"] p,
-body[data-theme="light"] h1,
-body[data-theme="light"] h2,
-body[data-theme="light"] h3,
-body[data-theme="light"] h4,
-body[data-theme="light"] h5,
-body[data-theme="light"] h6,
-body[data-theme="light"] .card-text,
-body[data-theme="light"] .card-title,
-body[data-theme="light"] label,
-body[data-theme="light"] .portfolio-title,
-body[data-theme="light"] .portfolio-content p {
-    color: #333333 !important;
-}
-
-/* Animation for light theme transition */
-@keyframes darkToLight {
-    0% { opacity: 0.8; }
-    50% { opacity: 0.6; }
-    100% { opacity: 0.9; }
-}
-
-.light-theme-active::after {
-    animation: darkToLight 1s forwards;
 }

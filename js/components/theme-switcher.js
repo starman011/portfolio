@@ -74,84 +74,89 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Create a rich holographic gradient with multiple distinct colors
     function createHolographicGradient(time, isLight) {
-        // Calculate shifting angle
-        const angle = (Date.now() / 150) % 360;
-
-        // Create multiple distinct base hues that shift at different rates
-        // This creates a true multi-color effect rather than just different shades of one color
-        const hue1 = (time * 100) % 360;                    // Full spectrum cycle
-        const hue2 = ((time * 120) + 120) % 360;            // Offset by 120 degrees for complementary color
-        const hue3 = ((time * 80) + 240) % 360;             // Offset by 240 degrees for triad completion
-        const hue4 = ((time * 140) + 180) % 360;            // Offset by 180 degrees for contrast
-
-        let colors = [];
-
         if (isLight) {
-            // Light theme - brighter, more pastel colors
-            colors = [
-                `hsla(${hue1}, 80%, 90%, 0.9)`,                  // First color - high lightness
-                `hsla(${hue2}, 70%, 85%, 0.8)`,                  // Second color - complementary
-                `hsla(${hue3}, 65%, 88%, 0.75)`,                 // Third color - triad completion
-                `hsla(${hue4}, 75%, 92%, 0.85)`                  // Fourth color - contrast
-            ];
-
-            // Update overlay pulse
-            const pulseValue = (Math.sin(time * 10) * 0.01) + 0.02;
-            document.documentElement.style.setProperty('--overlay-opacity', pulseValue.toFixed(3));
-        } else {
-            // Dark theme - deeper, richer colors with lower lightness
-            colors = [
-                `hsla(${hue1}, 70%, 15%, 0.95)`,                 // First color - lower lightness
-                `hsla(${hue2}, 65%, 18%, 0.85)`,                 // Second color - complementary
-                `hsla(${hue3}, 60%, 12%, 0.8)`,                  // Third color - triad completion
-                `hsla(${hue4}, 70%, 10%, 0.9)`                   // Fourth color - contrast
-            ];
-
-            // Update overlay pulse
-            const pulseValue = (Math.sin(time * 10) * 0.015) + 0.04;
-            document.documentElement.style.setProperty('--overlay-opacity', pulseValue.toFixed(3));
+            // Plain dark background for "light" switch
+            document.body.style.background = '#111'; // plain dark color
+            document.documentElement.style.setProperty('--overlay-opacity', '0'); // no pulse
+            document.documentElement.style.setProperty('--holo-gradient-1', 'none');
+            document.documentElement.style.setProperty('--holo-gradient-2', 'none');
+            return;
         }
 
-        // Create and apply the multi-color gradient
+        // DARK THEME: Holographic gradient as before
+        const angle = (Date.now() / 150) % 360;
+
+        const hue1 = (time * 100) % 360;
+        const hue2 = ((time * 120) + 120) % 360;
+        const hue3 = ((time * 80) + 240) % 360;
+        const hue4 = ((time * 140) + 180) % 360;
+
+        const colors = [
+            `hsla(${hue1}, 70%, 15%, 0.95)`,
+            `hsla(${hue2}, 65%, 18%, 0.85)`,
+            `hsla(${hue3}, 60%, 12%, 0.8)`,
+            `hsla(${hue4}, 70%, 10%, 0.9)`
+        ];
+
+        const pulseValue = (Math.sin(time * 10) * 0.015) + 0.04;
+        document.documentElement.style.setProperty('--overlay-opacity', pulseValue.toFixed(3));
+
         const gradient = `linear-gradient(${angle}deg, ${colors.join(', ')})`;
         document.body.style.background = gradient;
 
-        // Also update the holographic effects on UI elements by changing the CSS variables
-        // This makes badges, cards, etc. change along with the background
         const colorValues = colors.map(color => color.replace('hsla', 'rgba').replace(/%/g, ''));
         const holoGradient = `linear-gradient(${(angle + 45) % 360}deg, ${colorValues[0]}, ${colorValues[1]}, ${colorValues[2]}, ${colorValues[3]})`;
-
         document.documentElement.style.setProperty('--holo-gradient-1', holoGradient);
         document.documentElement.style.setProperty('--holo-gradient-2', `linear-gradient(${(angle + 135) % 360}deg, ${colorValues[3]}, ${colorValues[0]}, ${colorValues[1]}, ${colorValues[2]})`);
     }
 
-    // Apply dark theme
     function applyDarkTheme() {
         applyTheme('dark');
         createHolographicGradient(Date.now() / 20000, false);
-
-        // Explicitly set text color to white
+    
+        // Text color white for dark theme
         document.documentElement.style.setProperty('--text-color', '#ffffff');
-
-        // Update form inputs separately (needed for some browsers)
-        const formInputs = document.querySelectorAll('input, textarea');
+        document.body.style.color = '#ffffff';
+    
+        // Also update inputs and textareas text color
+        const formInputs = document.querySelectorAll('input, textarea, select, button');
         formInputs.forEach(input => {
             input.style.color = '#ffffff';
+            input.style.backgroundColor = '#222'; // dark background for inputs
+            input.style.borderColor = '#555';
         });
     }
-
-    // Apply light theme
+    
     function applyLightTheme() {
         applyTheme('light');
         createHolographicGradient(Date.now() / 20000, true);
-
-        // Explicitly set text color to black
-        document.documentElement.style.setProperty('--text-color', '#333333');
-
-        // Update form inputs separately (needed for some browsers)
-        const formInputs = document.querySelectorAll('input, textarea');
+    
+        // Text color dark for light theme
+        document.documentElement.style.setProperty('--text-color', '#111111');
+        document.body.style.color = '#111111';
+    
+        // Also update inputs and textareas text color
+        const formInputs = document.querySelectorAll('input, textarea, select, button');
         formInputs.forEach(input => {
-            input.style.color = '#333333';
+            input.style.color = '#111111';
+            input.style.backgroundColor = '#fff'; // light background for inputs
+            input.style.borderColor = '#ccc';
         });
+    }
+    
+
+    // Helper to set data-theme attribute on body
+    function applyTheme(themeName) {
+        document.body.setAttribute('data-theme', themeName);
+    }
+
+    // On page load: apply saved theme or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+        themeSwitch.checked = true;
+        applyDarkTheme();
+    } else {
+        themeSwitch.checked = false;
+        applyLightTheme();
     }
 });

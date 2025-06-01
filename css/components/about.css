@@ -1,11 +1,12 @@
-/* About Section Styles */
+/* About Section - Shared Styles */
 .about-section {
     padding: 5rem 0;
-    background-color: transparent;
     position: relative;
     overflow: hidden;
+    z-index: 0;
 }
 
+/* Dark Theme Background Gradient */
 .about-section::before {
     content: "";
     position: absolute;
@@ -20,46 +21,20 @@
     -webkit-backdrop-filter: blur(5px);
 }
 
+/* Light Theme: pure black, no overlay */
+body[data-theme="light"] .about-section {
+    background-color: #000000 !important; /* Pure black */
+}
+
+body[data-theme="light"] .about-section::before {
+    display: none !important;
+}
+
+/* Image Sizing Fix */
 .profile-img {
+    max-width: 100%;
     width: 80%;
+    height: auto;
     border-radius: 0.5rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.skill-badge {
-    display: inline-block;
-    background-color: var(--card-bg);
-    color: var(--primary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Holographic effect for skill badges */
-.skill-badge::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--holo-gradient-1);
-    opacity: 0.1;
-    z-index: -1;
-    transition: opacity 0.3s ease;
-}
-
-.skill-badge:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.skill-badge:hover::before {
-    opacity: 0.2;
 }
