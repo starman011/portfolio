@@ -24,6 +24,10 @@
     transition: color 0.3s ease;
 }
 
+.nav-link.active {
+    color: var(--secondary-color);
+}
+
 .nav-link:hover {
     color: var(--secondary-color);
 }
@@ -80,4 +84,25 @@ input:checked + .theme-toggle:after {
 
 #theme-switch {
     display: none;
+}
+/* Scrolled state */
+.site-header.navbar-scrolled {
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon + text visibility */
+.nav-item i {
+    margin-right: 4px;
+}
+
+.nav-text {
+    display: inline;
+    transition: opacity 0.2s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-text {
+        display: none;
+    }
 }
