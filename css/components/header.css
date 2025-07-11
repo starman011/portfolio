@@ -114,7 +114,7 @@ input:checked + .theme-toggle:after {
 
 /* Icon + text visibility */
 .nav-item i {
-    color: #ffffff;
+    color: var(--primary-color);
     margin-right: 0; font-size: 1.2rem;
 }
 
@@ -129,7 +129,7 @@ input:checked + .theme-toggle:after {
     }
 }
 .nav-link .fa-circle-user {
-    color: #ffffff !important;
+    color: var(--primary-color) !important;
 }
 
 @media (max-width: 768px) {

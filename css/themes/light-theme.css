@@ -3,7 +3,7 @@ body[data-theme="light"] {
     --primary-color: var(--primary-color-light);
     --secondary-color: var(--secondary-color-light);
     --bg-color: var(--bg-light);
-    --text-color: #ffffff; /* Forced to white */
+    --text-color: #111111; /* Dark text for light theme */
     --card-bg: var(--card-bg-light);
     --header-bg: var(--header-bg-light);
     --footer-bg: rgba(255, 255, 255, 0.5);
