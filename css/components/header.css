@@ -160,3 +160,15 @@ input:checked + .theme-toggle:after {
         font-size: 1rem;
     }
 }
+
+@media (max-width: 480px) {
+    .nav-item i {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .nav-item i {
+        font-size: 0.8rem;
+    }
+}
