@@ -19,9 +19,11 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // Default to a MongoDB Atlas connection string if no environment variable is provided.
-// Replace <password> with your actual database password.
+// The password is URI encoded to ensure special characters are handled correctly.
+// Example: plain-text password "p@ssw0rd'9'!" becomes "p%40ssw0rd%279%27%21".
+const encodedPassword = encodeURIComponent(process.env.DB_PASSWORD || 'Assassin10');
 const mongoUri = process.env.MONGO_URI ||
-    'mongodb+srv://forprogrammingonly01:<password>@cluster0.ojfinsc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+    `mongodb+srv://forprogrammingonly01:${encodedPassword}@cluster0.ojfinsc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB'))
