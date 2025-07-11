@@ -4,10 +4,11 @@ function VisitCounter() {
   const [count, setCount] = useState(null);
 
   useEffect(() => {
-    fetch('/api/view', { method: 'POST' })
-      .then(() => fetch('/api/count'))
+    const namespace = 'starmanodyssey.com';
+    const key = 'portfolio';
+    fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
       .then(res => res.json())
-      .then(data => setCount(data.count))
+      .then(data => setCount(data.value))
       .catch(err => console.error('View count error', err));
   }, []);
 
