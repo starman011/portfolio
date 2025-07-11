@@ -10,16 +10,30 @@ document.addEventListener('DOMContentLoaded', function() {
     document.documentElement.setAttribute('data-theme', currentTheme);
     document.body.setAttribute('data-theme', currentTheme);
 
-    // Set theme switch state if element exists
-    const themeSwitch = document.getElementById('theme-switch');
-    if (themeSwitch) {
-        themeSwitch.checked = (currentTheme === 'light');
+    // Set theme toggle button state if element exists
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    if (themeToggleBtn) {
+        const icon = themeToggleBtn.querySelector('i');
+        if (currentTheme === 'light') {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
 
-        // Add event listener to theme switch
-        themeSwitch.addEventListener('change', function() {
-            const newTheme = this.checked ? 'light' : 'dark';
+        // Add event listener to theme toggle
+        themeToggleBtn.addEventListener('click', function() {
+            const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
             localStorage.setItem('theme', newTheme);
             applyTheme(newTheme);
+            if (newTheme === 'light') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
         });
     }
 
@@ -115,10 +129,12 @@ const darkModeToggle = {
         localStorage.setItem('theme', 'dark');
         applyTheme('dark');
 
-        // Update theme switch if it exists
-        const themeSwitch = document.getElementById('theme-switch');
-        if (themeSwitch) {
-            themeSwitch.checked = false;
+        // Update theme toggle icon if it exists
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        if (themeToggleBtn) {
+            const icon = themeToggleBtn.querySelector('i');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
         }
     },
 
@@ -132,10 +148,12 @@ const darkModeToggle = {
         localStorage.setItem('theme', 'light');
         applyTheme('light');
 
-        // Update theme switch if it exists
-        const themeSwitch = document.getElementById('theme-switch');
-        if (themeSwitch) {
-            themeSwitch.checked = true;
+        // Update theme toggle icon if it exists
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        if (themeToggleBtn) {
+            const icon = themeToggleBtn.querySelector('i');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
         }
     },
 
