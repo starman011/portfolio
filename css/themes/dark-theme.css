@@ -4,7 +4,6 @@ body[data-theme="dark"] {
     --secondary-color: var(--secondary-color-dark);
     --bg-color: var(--bg-dark);
     --text-color: #ffffff; /* Explicitly set to white */
-    --card-bg: var(--card-bg-dark);
     --header-bg: var(--header-bg-dark);
     --footer-bg: rgba(18, 18, 18, 0.7);
     --border-color: var(--border-dark);
@@ -36,7 +35,6 @@ body[data-theme="dark"] .portfolio-content p {
 
 /* Ensure skill cards have a dark background and white text */
 body[data-theme="dark"] .skill-card {
-    background-color: var(--card-bg-dark);
     color: #ffffff;
 }
 
