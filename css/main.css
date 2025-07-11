@@ -7,7 +7,6 @@
     --secondary-color-light: #3498db;
     --bg-light: #f8f9fa;
     --text-light: #ffffff; /* unused now */
-    --card-bg-light: #ffffff;
     --header-bg-light: rgba(255, 255, 255, 0.85);
     --footer-bg-light: #ffffff;
     --border-light: rgb(255, 255, 255);
@@ -17,12 +16,11 @@
     --secondary-color-dark: #03dac6;
     --bg-dark: #121212;
     --text-dark: #ffffff; /* unused now */
-    --card-bg-dark: rgba(30, 30, 30, 0.85);
     --header-bg-dark: rgba(30, 30, 30, 0.85);
     --footer-bg-dark: rgba(18, 18, 18, 0.9);
     --border-dark: rgba(255, 255, 255, 0.1);
     --text-color: #111111;
-    --card-bg: var(--card-bg-light);
+    --card-bg: rgba(255, 255, 255, 0.15);
 }
 
 body, input, textarea, button, select, optgroup {
@@ -107,6 +105,8 @@ p, span, div, a:not(.btn), label, li {
 .form-control, .form-control:focus {
     color: var(--text-color); /* Theme-based text color */
     background-color: var(--card-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border-color: var(--border-color);
     transition: color 0.3s ease, background-color 0.3s ease;
 }
