@@ -48,10 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 siteContent.classList.remove('hidden');
             }
 
-            // Lazy load images
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                img.setAttribute('src', img.getAttribute('data-src'));
-            });
         });
     }
 
