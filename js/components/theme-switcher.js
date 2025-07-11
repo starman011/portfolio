@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Theme switcher initialized');
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
     const themeIcon = document.getElementById('theme-icon');
-    if (window.feather) { feather.replace(); }
+    if (window.feather && themeIcon) { feather.replace(); }
 
     // Animation state
     let animationRunning = false;
@@ -25,18 +25,20 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isLight) {
                 applyDarkTheme();
                 localStorage.setItem('theme', 'dark');
-                themeIcon.setAttribute('data-feather', 'moon');
+                if (themeIcon) themeIcon.setAttribute('data-feather', 'moon');
             } else {
                 applyLightTheme();
                 localStorage.setItem('theme', 'light');
-                themeIcon.setAttribute('data-feather', 'sun');
+                if (themeIcon) themeIcon.setAttribute('data-feather', 'sun');
             }
 
-            if (window.feather) { feather.replace(); }
-            themeIcon.classList.add('icon-animate');
-            themeIcon.addEventListener('animationend', () => {
-                themeIcon.classList.remove('icon-animate');
-            }, { once: true });
+            if (window.feather && themeIcon) { feather.replace(); }
+            if (themeIcon) {
+                themeIcon.classList.add('icon-animate');
+                themeIcon.addEventListener('animationend', () => {
+                    themeIcon.classList.remove('icon-animate');
+                }, { once: true });
+            }
 
             // Restart animation
             startBackgroundAnimation();
@@ -168,10 +170,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     if (savedTheme === 'light') {
         applyLightTheme();
-        themeIcon.setAttribute('data-feather', 'sun');
+        if (themeIcon) themeIcon.setAttribute('data-feather', 'sun');
     } else {
         applyDarkTheme();
-        themeIcon.setAttribute('data-feather', 'moon');
+        if (themeIcon) themeIcon.setAttribute('data-feather', 'moon');
     }
-    if (window.feather) { feather.replace(); }
+    if (window.feather && themeIcon) { feather.replace(); }
+
+    // Expose theme functions globally for React component
+    window.applyDarkTheme = applyDarkTheme;
+    window.applyLightTheme = applyLightTheme;
+    window.startBackgroundAnimation = startBackgroundAnimation;
+    window.stopBackgroundAnimation = stopBackgroundAnimation;
 });
