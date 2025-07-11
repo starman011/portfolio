@@ -5,12 +5,12 @@ body[data-theme="light"] {
     --bg-color: var(--bg-light);
     --text-color: #111111; /* Dark text for light theme */
     --header-bg: var(--header-bg-light);
-    --footer-bg: rgba(255, 255, 255, 0.5);
+    --footer-bg: rgba(245, 245, 220, 0.5);
     --border-color: var(--border-light);
 
     /* Holographic Gradients - Light Theme */
-    --holo-gradient-1: linear-gradient(45deg, rgba(255, 255, 255, 0.9), rgba(143, 213, 255, 0.8), rgba(177, 156, 217, 0.7), rgba(249, 184, 253, 0.8), rgba(255, 255, 255, 0.9));
-    --holo-gradient-2: linear-gradient(135deg, rgba(252, 252, 252, 0.9), rgba(160, 216, 239, 0.8), rgba(185, 223, 237, 0.7), rgba(200, 240, 245, 0.8), rgba(255, 255, 255, 0.9));
+    --holo-gradient-1: linear-gradient(45deg, rgba(245, 245, 220, 0.9), rgba(143, 213, 255, 0.8), rgba(177, 156, 217, 0.7), rgba(249, 184, 253, 0.8), rgba(245, 245, 220, 0.9));
+    --holo-gradient-2: linear-gradient(135deg, rgba(245, 245, 220, 0.9), rgba(160, 216, 239, 0.8), rgba(185, 223, 237, 0.7), rgba(200, 240, 245, 0.8), rgba(245, 245, 220, 0.9));
 
     /* Dynamic background variables */
     --bg-opacity: 0.04;

@@ -25,7 +25,7 @@
 .footer p,
 .footer a,
 .footer .text-white {
-    color: var(--text-color) !important;
+    color: beige !important;
     position: relative;
     z-index: 1;
     transition: color 0.3s ease;

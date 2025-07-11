@@ -6,21 +6,21 @@
     --primary-color-light: #2c3e50;
     --secondary-color-light: #3498db;
     --bg-light: #f8f9fa;
-    --text-light: #ffffff; /* unused now */
-    --header-bg-light: rgba(255, 255, 255, 0.85);
-    --footer-bg-light: #ffffff;
-    --border-light: rgb(255, 255, 255);
+    --text-light: #f5f5dc; /* unused now */
+    --header-bg-light: rgba(245, 245, 220, 0.85);
+    --footer-bg-light: #f5f5dc;
+    --border-light: rgb(245, 245, 220);
 
     /* Multi Color Theme Colors */
     --primary-color-dark: #bb86fc;
     --secondary-color-dark: #03dac6;
     --bg-dark: #121212;
-    --text-dark: #ffffff; /* unused now */
+    --text-dark: #f5f5dc; /* unused now */
     --header-bg-dark: rgba(30, 30, 30, 0.85);
     --footer-bg-dark: rgba(18, 18, 18, 0.9);
-    --border-dark: rgba(255, 255, 255, 0.1);
+    --border-dark: rgba(245, 245, 220, 0.1);
     --text-color: #111111;
-    --card-bg: rgba(255, 255, 255, 0.15);
+    --card-bg: rgba(245, 245, 220, 0.15);
 }
 
 body, input, textarea, button, select, optgroup {

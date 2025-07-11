@@ -14,7 +14,7 @@
     background-color: var(--card-bg);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(245, 245, 220, 0.1);
     border-radius: 0.5rem;
     padding: 1.5rem;
     height: 100%;
