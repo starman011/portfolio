@@ -17,3 +17,9 @@ body[data-theme="light"] {
     --bg-opacity: 0.04;
     --overlay-opacity: 0.02;
 }
+
+/* Ensure skill cards are readable in light theme */
+body[data-theme="light"] .skill-card {
+    background-color: var(--card-bg-light);
+    color: #111111;
+}
