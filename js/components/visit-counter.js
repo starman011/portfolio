@@ -4,14 +4,20 @@ function VisitCounter() {
   const [count, setCount] = useState(null);
 
   useEffect(() => {
-    const namespace = 'starmanodyssey.com';
-    const key = 'portfolio';
-    fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
-      .then(res => res.json())
-      .then(data => setCount(data.value))
+    // First register the visit on the backend
+    fetch('/api/view', { method: 'POST' })
       .catch(err => {
-        console.error('View count error', err);
-        setCount(0); // fallback to zero on failure
+        console.error('View increment error', err);
+      })
+      .finally(() => {
+        // Then retrieve the current count from MongoDB
+        fetch('/api/count')
+          .then(res => res.json())
+          .then(data => setCount(data.count))
+          .catch(err => {
+            console.error('View count error', err);
+            setCount(0); // fallback to zero on failure
+          });
       });
   }, []);
 
