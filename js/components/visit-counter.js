@@ -6,13 +6,29 @@ function VisitCounter() {
   useEffect(() => {
     const namespace = 'starmanodyssey.com';
     const key = 'portfolio';
-    fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
-      .then(res => res.json())
-      .then(data => setCount(data.value))
-      .catch(err => {
+
+    async function fetchCount() {
+      try {
+        const res = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
+        if (!res.ok) throw new Error('Network response was not ok');
+        const data = await res.json();
+        setCount(data.value);
+        localStorage.setItem('visitCount', data.value);
+      } catch (err) {
         console.error('View count error', err);
-        setCount(0); // fallback to zero on failure
-      });
+        const stored = localStorage.getItem('visitCount');
+        if (stored !== null) {
+          const parsed = parseInt(stored, 10) || 0;
+          const newCount = parsed + 1;
+          localStorage.setItem('visitCount', newCount);
+          setCount(newCount);
+        } else {
+          setCount(0);
+        }
+      }
+    }
+
+    fetchCount();
   }, []);
 
   const renderDigits = () => {
