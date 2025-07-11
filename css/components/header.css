@@ -24,6 +24,14 @@
     transition: color 0.3s ease;
 }
 
+.navbar-nav {
+    margin-left: 0 !important;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .nav-link {
     font-weight: 500;
     color: #000;
@@ -50,8 +58,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--holo-gradient-1);
-    opacity: 0.15;
+    background-color: #f5f5dc;
     z-index: -1;
     border-radius: 50px;
 }
