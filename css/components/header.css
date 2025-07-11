@@ -6,7 +6,7 @@
     top: 40px; /* detach from the very top */
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
+    width: 70%;
     padding: 0.75rem 1.5rem;
     border-radius: 50px; /* pill shape */
     z-index: 1000;
@@ -28,6 +28,9 @@
     color: var(--primary-color);
     margin: 0 10px;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-link.active {
@@ -69,7 +72,7 @@
 .theme-toggle i {
     position: absolute;
     font-size: 0.8rem;
-    color: var(--primary-color);
+    color: #f5f5dc;
     transition: opacity 0.3s;
 }
 .theme-toggle .fa-moon {
@@ -114,8 +117,9 @@ input:checked + .theme-toggle:after {
 
 /* Icon + text visibility */
 .nav-item i {
-    color: var(--primary-color);
-    margin-right: 0; font-size: 1.2rem;
+    color: #f5f5dc;
+    margin-right: 0;
+    font-size: 1.2rem;
 }
 
 .nav-text {
@@ -129,12 +133,12 @@ input:checked + .theme-toggle:after {
     }
 }
 .nav-link .fa-circle-user {
-    color: var(--primary-color) !important;
+    color: #f5f5dc !important;
 }
 
 @media (max-width: 768px) {
     .site-header {
-        width: 90%;
+        width: 85%;
         top: 20px;
     }
 }
