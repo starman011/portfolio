@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
         stopBackgroundAnimation();
 
         if (this.checked) {
-            applyDarkTheme();
-            localStorage.setItem('theme', 'dark');
-        } else {
             applyLightTheme();
             localStorage.setItem('theme', 'light');
+        } else {
+            applyDarkTheme();
+            localStorage.setItem('theme', 'dark');
         }
 
         // Restart animation
@@ -73,11 +73,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Create a rich holographic gradient with multiple distinct colors
-    function createHolographicGradient(time, isLight) {
-        if (isLight) {
-            // Plain dark background for "light" switch
-            document.body.style.background = '#111'; // plain dark color
-            document.documentElement.style.setProperty('--overlay-opacity', '0'); // no pulse
+    function createHolographicGradient(time, useColor) {
+        if (!useColor) {
+            // Plain dark background when color mode is off
+            document.body.style.background = '#111';
+            document.documentElement.style.setProperty('--overlay-opacity', '0');
             document.documentElement.style.setProperty('--holo-gradient-1', 'none');
             document.documentElement.style.setProperty('--holo-gradient-2', 'none');
             return;
@@ -150,13 +150,13 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.setAttribute('data-theme', themeName);
     }
 
-    // On page load: apply saved theme or default to light
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    if (savedTheme === 'dark') {
+    // On page load: apply saved theme or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
         themeSwitch.checked = true;
-        applyDarkTheme();
+        applyLightTheme();
     } else {
         themeSwitch.checked = false;
-        applyLightTheme();
+        applyDarkTheme();
     }
 });
