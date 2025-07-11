@@ -21,14 +21,6 @@
     -webkit-backdrop-filter: blur(5px);
 }
 
-/* Light Theme: pure black, no overlay */
-body[data-theme="light"] .about-section {
-    background-color: #000000 !important; /* Pure black */
-}
-
-body[data-theme="light"] .about-section::before {
-    display: none !important;
-}
 
 /* Image Sizing Fix */
 .profile-img {
