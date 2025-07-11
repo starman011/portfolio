@@ -21,7 +21,8 @@
     --header-bg-dark: rgba(30, 30, 30, 0.85);
     --footer-bg-dark: rgba(18, 18, 18, 0.9);
     --border-dark: rgba(255, 255, 255, 0.1);
-    --text-color: #ffffff;
+    --text-color: #111111;
+    --card-bg: var(--card-bg-light);
 }
 
 body, input, textarea, button, select, optgroup {
