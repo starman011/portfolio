@@ -1,7 +1,23 @@
 const { useState, useEffect } = React;
 
 function ThemeToggle() {
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
+  const getPreferredTheme = () => {
+    const stored = localStorage.getItem('theme');
+    if (stored) return stored;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  };
+
+  const [theme, setTheme] = useState(getPreferredTheme);
+
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e) => {
+      if (localStorage.getItem('theme')) return;
+      setTheme(e.matches ? 'dark' : 'light');
+    };
+    media.addEventListener('change', handleChange);
+    return () => media.removeEventListener('change', handleChange);
+  }, []);
 
   const apply = (newTheme) => {
     if (newTheme === 'light') {
@@ -30,6 +46,16 @@ function ThemeToggle() {
   };
 
   useEffect(() => {
+    const handler = (e) => {
+      if (e.key.toLowerCase() === 't' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        toggleTheme();
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [theme]);
+
+  useEffect(() => {
     if (typeof window.startBackgroundAnimation === 'function') {
       window.startBackgroundAnimation();
     }
@@ -39,7 +65,8 @@ function ThemeToggle() {
     React.createElement('button', {
       onClick: toggleTheme,
       className: `react-theme-toggle ${theme}`,
-      'aria-label': 'Toggle theme'
+      'aria-label': `Activate ${theme === 'light' ? 'dark' : 'light'} mode`,
+      'aria-pressed': theme === 'dark'
     }, React.createElement('span', { className: 'icon icon-animate' }))
   );
 }
