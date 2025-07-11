@@ -34,6 +34,12 @@ body[data-theme="dark"] .portfolio-content p {
     color: #ffffff !important;
 }
 
+/* Ensure skill cards have a dark background and white text */
+body[data-theme="dark"] .skill-card {
+    background-color: var(--card-bg-dark);
+    color: #ffffff;
+}
+
 /* Animation for dark theme transition */
 @keyframes lightToDark {
     0% { opacity: 0.8; }
