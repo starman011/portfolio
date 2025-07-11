@@ -1,0 +1,22 @@
+.visit-counter-wrapper {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.visit-counter-label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.visit-counter-digits {
+  display: inline-flex;
+  gap: 0.25rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+}
+
+.visit-counter-digit {
+  background-color: var(--card-bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
