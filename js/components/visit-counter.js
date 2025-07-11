@@ -4,16 +4,15 @@ function VisitCounter() {
   const [count, setCount] = useState(null);
 
   useEffect(() => {
-    const namespace = 'starmanodyssey.com';
-    const key = 'portfolio';
-
     async function fetchCount() {
       try {
-        const res = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
+        // Log this visit and fetch the current count from the backend
+        await fetch('/api/view', { method: 'POST' });
+        const res = await fetch('/api/count');
         if (!res.ok) throw new Error('Network response was not ok');
         const data = await res.json();
-        setCount(data.value);
-        localStorage.setItem('visitCount', data.value);
+        setCount(data.count);
+        localStorage.setItem('visitCount', data.count);
       } catch (err) {
         console.error('View count error', err);
         const stored = localStorage.getItem('visitCount');
