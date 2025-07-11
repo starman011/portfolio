@@ -1,4 +1,5 @@
 const { useState, useEffect } = React;
+const { Switch } = MaterialUI;
 
 function ThemeToggle() {
   const getPreferredTheme = () => {
@@ -62,12 +63,11 @@ function ThemeToggle() {
   }, [theme]);
 
   return (
-    React.createElement('button', {
-      onClick: toggleTheme,
-      className: `react-theme-toggle ${theme}`,
-      'aria-label': `Activate ${theme === 'light' ? 'dark' : 'light'} mode`,
-      'aria-pressed': theme === 'dark'
-    }, React.createElement('span', { className: 'icon icon-animate' }))
+    React.createElement(Switch, {
+      checked: theme === 'dark',
+      onChange: toggleTheme,
+      inputProps: { 'aria-label': 'Theme toggle' }
+    })
   );
 }
 
