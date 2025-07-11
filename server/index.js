@@ -22,8 +22,13 @@ app.use(limiter);
 // The password is URI encoded to ensure special characters are handled correctly.
 // Example: plain-text password "p@ssw0rd'9'!" becomes "p%40ssw0rd%279%27%21".
 const encodedPassword = encodeURIComponent(process.env.DB_PASSWORD || 'Assassin10');
-const mongoUri = process.env.MONGO_URI ||
+let mongoUri = process.env.MONGO_URI ||
     `mongodb+srv://forprogrammingonly01:${encodedPassword}@cluster0.ojfinsc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+
+// Replace placeholder password if the user copied the example connection string
+if (mongoUri.includes('<password>')) {
+    mongoUri = mongoUri.replace('<password>', encodedPassword);
+}
 
 mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB'))
