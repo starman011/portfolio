@@ -9,7 +9,10 @@ function VisitCounter() {
     fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
       .then(res => res.json())
       .then(data => setCount(data.value))
-      .catch(err => console.error('View count error', err));
+      .catch(err => {
+        console.error('View count error', err);
+        setCount(0); // fallback to zero on failure
+      });
   }, []);
 
   const renderDigits = () => {
