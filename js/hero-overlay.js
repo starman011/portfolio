@@ -41,6 +41,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     heroOverlay.remove();
                 }, 1200);
             }
+
+            // Reveal site content
+            const siteContent = document.getElementById('site-content');
+            if (siteContent) {
+                siteContent.classList.remove('hidden');
+            }
+
+            // Lazy load images
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                img.setAttribute('src', img.getAttribute('data-src'));
+            });
         });
     }
 

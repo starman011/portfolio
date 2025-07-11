@@ -163,3 +163,4 @@
         right: 10%;
     }
 }
+#site-content.hidden { display: none; }
