@@ -24,7 +24,7 @@
 .footer h5,
 .footer p,
 .footer a,
-.footer .text-white {
+.footer .text-beige {
     color: beige !important;
     position: relative;
     z-index: 1;
