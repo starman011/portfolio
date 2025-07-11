@@ -3,10 +3,10 @@
     background-color: transparent;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
-    top: 40px; /* detach from the very top */
+    bottom: 40px; /* detach from the very bottom */
     left: 50%;
     transform: translateX(-50%);
-    width: 70%;
+    width: 35%; /* 50% smaller than before */
     padding: 0.75rem 1.5rem;
     border-radius: 50px; /* pill shape */
     z-index: 1000;
@@ -138,7 +138,7 @@ input:checked + .theme-toggle:after {
 
 @media (max-width: 768px) {
     .site-header {
-        width: 85%;
-        top: 20px;
+        width: 45%;
+        bottom: 20px;
     }
 }
