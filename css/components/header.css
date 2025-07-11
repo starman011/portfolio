@@ -2,8 +2,13 @@
 .site-header {
     background-color: transparent;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
     z-index: 1000;
     transition: all 0.3s ease;
     backdrop-filter: blur(15px);
@@ -11,6 +16,7 @@
 }
 
 .navbar-brand {
+    display: none;
     font-weight: 700;
     color: var(--primary-color);
     font-size: 1.5rem;
@@ -43,16 +49,16 @@
     background: var(--holo-gradient-1);
     opacity: 0.15;
     z-index: -1;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
 }
 
 /* Theme Toggle Styles */
 .theme-toggle {
     cursor: pointer;
-    width: 50px;
+    width: 40px;
     height: 24px;
     background: var(--holo-gradient-1);
-    display: block;
+    display: flex; justify-content: center; align-items: center;
     border-radius: 100px;
     position: relative;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
@@ -60,6 +66,21 @@
     margin-top: 3px;
 }
 
+.theme-toggle i {
+    position: absolute;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    transition: opacity 0.3s;
+}
+.theme-toggle .fa-moon {
+    opacity: 0;
+}
+input:checked + .theme-toggle .fa-sun {
+    opacity: 0;
+}
+input:checked + .theme-toggle .fa-moon {
+    opacity: 1;
+}
 .theme-toggle:after {
     content: '';
     position: absolute;
@@ -93,16 +114,27 @@ input:checked + .theme-toggle:after {
 
 /* Icon + text visibility */
 .nav-item i {
-    margin-right: 4px;
+    color: #ffffff;
+    margin-right: 0; font-size: 1.2rem;
 }
 
 .nav-text {
-    display: inline;
+    display: none;
     transition: opacity 0.2s ease;
 }
 
 @media (max-width: 768px) {
     .nav-text {
         display: none;
+    }
+}
+.nav-link .fa-circle-user {
+    color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        width: 90%;
+        top: 10px;
     }
 }
