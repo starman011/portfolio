@@ -18,7 +18,10 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/viewCounter';
+// Default to a MongoDB Atlas connection string if no environment variable is provided.
+// Replace <password> with your actual database password.
+const mongoUri = process.env.MONGO_URI ||
+    'mongodb+srv://forprogrammingonly01:<password>@cluster0.ojfinsc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB'))
