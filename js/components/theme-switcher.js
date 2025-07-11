@@ -1,7 +1,8 @@
 // Dynamic theme switcher with multiple-color holographic gradients
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Theme switcher initialized');
-    const themeSwitch = document.getElementById('theme-switch');
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 
     // Animation state
     let animationRunning = false;
@@ -10,24 +11,36 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize dynamic background effects
     startBackgroundAnimation();
 
-    // Toggle theme when the switch is clicked
-    themeSwitch.addEventListener('change', function() {
-        console.log('Theme toggle clicked, checked:', this.checked);
+    // Toggle theme when the button is clicked
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', function() {
+            console.log('Theme toggle button clicked');
 
-        // Stop current animation
-        stopBackgroundAnimation();
+            // Stop current animation
+            stopBackgroundAnimation();
 
-        if (this.checked) {
-            applyLightTheme();
-            localStorage.setItem('theme', 'light');
-        } else {
-            applyDarkTheme();
-            localStorage.setItem('theme', 'dark');
-        }
+            const isLight = document.body.getAttribute('data-theme') === 'light';
 
-        // Restart animation
-        startBackgroundAnimation();
-    });
+            if (isLight) {
+                applyDarkTheme();
+                localStorage.setItem('theme', 'dark');
+                if (themeIcon) {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
+            } else {
+                applyLightTheme();
+                localStorage.setItem('theme', 'light');
+                if (themeIcon) {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                }
+            }
+
+            // Restart animation
+            startBackgroundAnimation();
+        });
+    }
 
     // Start the background animation
     function startBackgroundAnimation() {
@@ -153,10 +166,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // On page load: apply saved theme or default to dark
     const savedTheme = localStorage.getItem('theme') || 'dark';
     if (savedTheme === 'light') {
-        themeSwitch.checked = true;
         applyLightTheme();
+        if (themeIcon) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
     } else {
-        themeSwitch.checked = false;
         applyDarkTheme();
+        if (themeIcon) {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
     }
 });
