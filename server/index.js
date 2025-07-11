@@ -18,21 +18,27 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-// Default to a MongoDB Atlas connection string if no environment variable is provided.
-// The password is URI encoded to ensure special characters are handled correctly.
-// Example: plain-text password "p@ssw0rd'9'!" becomes "p%40ssw0rd%279%27%21".
-const encodedPassword = encodeURIComponent(process.env.DB_PASSWORD || 'Assassin10');
-let mongoUri = process.env.MONGO_URI ||
-    `mongodb+srv://forprogrammingonly01:${encodedPassword}@cluster0.ojfinsc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-
-// Replace placeholder password if the user copied the example connection string
-if (mongoUri.includes('<password>')) {
-    mongoUri = mongoUri.replace('<password>', encodedPassword);
+// MongoDB connection
+// Ensure an explicit URI is provided via environment variables.
+let mongoUri = process.env.MONGO_URI;
+if (!mongoUri) {
+    console.error('Missing MONGO_URI environment variable');
+    process.exit(1);
 }
 
-mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
+// Replace `<password>` placeholder if one is present and DB_PASSWORD is set
+if (process.env.DB_PASSWORD) {
+    const encodedPassword = encodeURIComponent(process.env.DB_PASSWORD);
+    if (mongoUri.includes('<password>')) {
+        mongoUri = mongoUri.replace('<password>', encodedPassword);
+    }
+}
+
+mongoose.connect(mongoUri)
     .then(() => console.log('Connected to MongoDB'))
-    .catch(err => console.error('MongoDB connection error:', err));
+    .catch(err => {
+        console.error('MongoDB connection error:', err);
+    });
 
 // Schema for view count
 const counterSchema = new mongoose.Schema({
