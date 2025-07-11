@@ -2,7 +2,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Theme switcher initialized');
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
+    const themeIcon = document.getElementById('theme-icon');
+    if (window.feather) { feather.replace(); }
 
     // Animation state
     let animationRunning = false;
@@ -24,18 +25,18 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isLight) {
                 applyDarkTheme();
                 localStorage.setItem('theme', 'dark');
-                if (themeIcon) {
-                    themeIcon.classList.remove('fa-sun');
-                    themeIcon.classList.add('fa-moon');
-                }
+                themeIcon.setAttribute('data-feather', 'moon');
             } else {
                 applyLightTheme();
                 localStorage.setItem('theme', 'light');
-                if (themeIcon) {
-                    themeIcon.classList.remove('fa-moon');
-                    themeIcon.classList.add('fa-sun');
-                }
+                themeIcon.setAttribute('data-feather', 'sun');
             }
+
+            if (window.feather) { feather.replace(); }
+            themeIcon.classList.add('icon-animate');
+            themeIcon.addEventListener('animationend', () => {
+                themeIcon.classList.remove('icon-animate');
+            }, { once: true });
 
             // Restart animation
             startBackgroundAnimation();
@@ -167,15 +168,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     if (savedTheme === 'light') {
         applyLightTheme();
-        if (themeIcon) {
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-        }
+        themeIcon.setAttribute('data-feather', 'sun');
     } else {
         applyDarkTheme();
-        if (themeIcon) {
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-        }
+        themeIcon.setAttribute('data-feather', 'moon');
     }
+    if (window.feather) { feather.replace(); }
 });
