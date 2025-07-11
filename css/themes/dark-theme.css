@@ -3,7 +3,7 @@ body[data-theme="dark"] {
     --primary-color: var(--primary-color-dark);
     --secondary-color: var(--secondary-color-dark);
     --bg-color: var(--bg-dark);
-    --text-color: #ffffff; /* Explicitly set to white */
+    --text-color: #f5f5dc; /* Explicitly set to beige */
     --header-bg: var(--header-bg-dark);
     --footer-bg: rgba(18, 18, 18, 0.7);
     --border-color: var(--border-dark);
@@ -30,12 +30,12 @@ body[data-theme="dark"] .card-title,
 body[data-theme="dark"] label,
 body[data-theme="dark"] .portfolio-title,
 body[data-theme="dark"] .portfolio-content p {
-    color: #ffffff !important;
+    color: #f5f5dc !important;
 }
 
 /* Ensure skill cards have a dark background and white text */
 body[data-theme="dark"] .skill-card {
-    color: #ffffff;
+    color: #f5f5dc;
 }
 
 /* Animation for dark theme transition */
