@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== Theme Management =====
     // Check if theme is already set in storage
-    const currentTheme = localStorage.getItem('theme') ||
-        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const currentTheme = localStorage.getItem('theme') || 'dark';
 
     // Set initial theme on page load
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -14,11 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set theme switch state if element exists
     const themeSwitch = document.getElementById('theme-switch');
     if (themeSwitch) {
-        themeSwitch.checked = (currentTheme === 'dark');
+        themeSwitch.checked = (currentTheme === 'light');
 
         // Add event listener to theme switch
         themeSwitch.addEventListener('change', function() {
-            const newTheme = this.checked ? 'dark' : 'light';
+            const newTheme = this.checked ? 'light' : 'dark';
             localStorage.setItem('theme', newTheme);
             applyTheme(newTheme);
         });
@@ -119,7 +118,7 @@ const darkModeToggle = {
         // Update theme switch if it exists
         const themeSwitch = document.getElementById('theme-switch');
         if (themeSwitch) {
-            themeSwitch.checked = true;
+            themeSwitch.checked = false;
         }
     },
 
@@ -136,7 +135,7 @@ const darkModeToggle = {
         // Update theme switch if it exists
         const themeSwitch = document.getElementById('theme-switch');
         if (themeSwitch) {
-            themeSwitch.checked = false;
+            themeSwitch.checked = true;
         }
     },
 
