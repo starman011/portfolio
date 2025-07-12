@@ -19,7 +19,7 @@ body[data-theme="light"] {
 
 /* Ensure skill cards are readable in light theme */
 body[data-theme="light"] .skill-card {
-    color: #000;
+    color: #f5f5dc;
 }
 
 /* Override text color for specific sections */
@@ -27,5 +27,5 @@ body[data-theme="light"] #skills,
 body[data-theme="light"] #skills *,
 body[data-theme="light"] #experience,
 body[data-theme="light"] #experience * {
-    color: #000 !important;
+    color: #f5f5dc !important;
 }
