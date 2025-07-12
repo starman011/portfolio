@@ -147,16 +147,16 @@ document.addEventListener('DOMContentLoaded', function() {
         applyTheme('light');
         createHolographicGradient(Date.now() / 20000, true);
     
-        // Text color dark for light theme
-        document.documentElement.style.setProperty('--text-color', '#111111');
-        document.body.style.color = '#111111';
+        // Text color beige for light theme
+        document.documentElement.style.setProperty('--text-color', '#f5f5dc');
+        document.body.style.color = '#f5f5dc';
     
         // Also update inputs and textareas text color
         const formInputs = document.querySelectorAll('input, textarea, select, button');
         formInputs.forEach(input => {
-            input.style.color = '#111111';
-            input.style.backgroundColor = '#f5f5dc'; // light background for inputs
-            input.style.borderColor = '#ccc';
+            input.style.color = '#f5f5dc';
+            input.style.backgroundColor = '#222'; // dark background for inputs
+            input.style.borderColor = '#555';
         });
     }
     
