@@ -15,6 +15,9 @@ body[data-theme="dark"] {
     /* Dynamic background variables */
     --bg-opacity: 0.05;
     --overlay-opacity: 0.03;
+
+    /* Default text color for dark theme */
+    color: #f5f5dc;
 }
 
 /* Additional text color overrides for dark theme */
@@ -36,6 +39,14 @@ body[data-theme="dark"] .portfolio-content p {
 /* Ensure skill cards have a dark background and white text */
 body[data-theme="dark"] .skill-card {
     color: #f5f5dc;
+}
+
+/* Override text color for specific sections */
+body[data-theme="dark"] #skills,
+body[data-theme="dark"] #skills *,
+body[data-theme="dark"] #experience,
+body[data-theme="dark"] #experience * {
+    color: #000 !important;
 }
 
 /* Animation for dark theme transition */

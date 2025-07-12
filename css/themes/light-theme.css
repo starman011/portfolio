@@ -3,7 +3,7 @@ body[data-theme="light"] {
     --primary-color: var(--primary-color-light);
     --secondary-color: var(--secondary-color-light);
     --bg-color: var(--bg-light);
-    --text-color: #111111; /* Dark text for light theme */
+    --text-color: #f5f5dc; /* Beige text for consistency */
     --header-bg: var(--header-bg-light);
     --footer-bg: rgba(245, 245, 220, 0.5);
     --border-color: var(--border-light);
@@ -19,5 +19,13 @@ body[data-theme="light"] {
 
 /* Ensure skill cards are readable in light theme */
 body[data-theme="light"] .skill-card {
-    color: #111111;
+    color: #000;
+}
+
+/* Override text color for specific sections */
+body[data-theme="light"] #skills,
+body[data-theme="light"] #skills *,
+body[data-theme="light"] #experience,
+body[data-theme="light"] #experience * {
+    color: #000 !important;
 }
