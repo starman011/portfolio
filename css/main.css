@@ -139,23 +139,3 @@ p, span, div, a:not(.btn), label, li {
     border-color: beige !important;
     color: #000 !important;
 }
-
-/* Parallax elements */
-[data-parallax-speed] {
-    will-change: transform;
-}
-
-/* Ensure footer sticks to the bottom */
-html, body {
-    height: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-footer {
-    margin-top: auto;
-}
