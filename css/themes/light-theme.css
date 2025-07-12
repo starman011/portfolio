@@ -15,6 +15,9 @@ body[data-theme="light"] {
     /* Dynamic background variables */
     --bg-opacity: 0.04;
     --overlay-opacity: 0.02;
+
+    /* Default text color for light theme */
+    color: var(--text-color);
 }
 
 /* Ensure skill cards are readable in light theme */
