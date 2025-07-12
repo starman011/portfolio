@@ -17,7 +17,7 @@ body[data-theme="dark"] {
     --overlay-opacity: 0.03;
 
     /* Default text color for dark theme */
-    color: #f5f5dc;
+    color: var(--text-color);
 }
 
 /* Additional text color overrides for dark theme */
@@ -46,7 +46,7 @@ body[data-theme="dark"] #skills,
 body[data-theme="dark"] #skills *,
 body[data-theme="dark"] #experience,
 body[data-theme="dark"] #experience * {
-    color: #000 !important;
+    color: #f5f5dc !important;
 }
 
 /* Animation for dark theme transition */
