@@ -123,3 +123,20 @@ p, span, div, a:not(.btn), label, li {
         font-size: 14px;
     }
 }
+
+/* Utility classes for beige theme */
+.text-beige {
+    color: beige !important;
+}
+
+.bg-beige,
+.bg-light {
+    background-color: beige !important;
+}
+
+.btn-light {
+    background-color: beige !important;
+    border-color: beige !important;
+    color: #000 !important;
+}
+
