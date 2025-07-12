@@ -74,6 +74,12 @@ document.addEventListener('DOMContentLoaded', function() {
             enterSiteBtn.addEventListener('click', displayRandomImage);
         }
     }
+    const backToTopBtn = document.getElementById("back-to-top");
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
 });
 
 // Global function to apply theme

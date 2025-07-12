@@ -1,9 +1,10 @@
 /* Footer Styles */
 .footer {
-    padding: 3rem 0;
+    padding: 1rem 0;
     background-color: var(--footer-bg);
     position: relative;
     overflow: hidden;
+    border-top: 1px solid var(--border-color);
 }
 
 /* Holographic effect for footer */
@@ -19,25 +20,28 @@
     z-index: 0;
 }
 
-/* Fix for footer text colors */
-.footer h4,
-.footer h5,
-.footer p,
-.footer a,
-.footer .text-white {
-    color: beige !important;
+.footer .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
     z-index: 1;
-    transition: color 0.3s ease;
 }
 
-/* Make sure the links are visible in both themes */
-.footer a:hover {
-    color: var(--secondary-color) !important;
-    text-decoration: underline;
-}
-
-.footer hr {
+.footer .vertical-divider {
+    width: 1px;
+    height: 1rem;
     background-color: var(--border-color);
-    opacity: 0.3;
+    margin: 0 0.75rem;
+}
+
+.footer .back-to-top-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+}
+
+.footer .back-to-top-btn:hover {
+    color: var(--secondary-color);
 }
