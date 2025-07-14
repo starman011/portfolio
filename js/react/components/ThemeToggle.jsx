@@ -63,16 +63,12 @@ function ThemeToggle() {
   }, [theme]);
 
   return (
-    React.createElement(Switch, {
-      checked: theme === 'dark',
-      onChange: toggleTheme,
-      inputProps: { 'aria-label': 'Theme toggle' }
-    })
+    <Switch
+      checked={theme === 'dark'}
+      onChange={toggleTheme}
+      inputProps={{ 'aria-label': 'Theme toggle' }}
+    />
   );
 }
 
-ReactDOM.render(
-  React.createElement(ThemeToggle),
-  document.getElementById('react-theme-toggle')
-);
-
+window.ThemeToggle = ThemeToggle;
