@@ -6,7 +6,6 @@ function VisitCounter() {
   useEffect(() => {
     async function fetchCount() {
       try {
-        // Try the backend first
         await fetch('/api/view', { method: 'POST' });
         const res = await fetch('/api/count');
         if (!res.ok) throw new Error('Backend response was not ok');
@@ -45,18 +44,17 @@ function VisitCounter() {
     if (count === null) {
       return 'Loading...';
     }
-    return String(count).split('').map((d, i) =>
-      React.createElement('span', { key: i, className: 'visit-counter-digit' }, d)
-    );
+    return String(count)
+      .split('')
+      .map((d, i) => <span key={i} className="visit-counter-digit">{d}</span>);
   };
 
-  return React.createElement('div', { className: 'visit-counter-wrapper' },
-    React.createElement('div', { className: 'visit-counter-label' }, 'Visitors'),
-    React.createElement('div', { className: 'visit-counter-digits' }, renderDigits())
+  return (
+    <div className="visit-counter-wrapper">
+      <div className="visit-counter-label">Visitors</div>
+      <div className="visit-counter-digits">{renderDigits()}</div>
+    </div>
   );
 }
 
-ReactDOM.render(
-  React.createElement(VisitCounter),
-  document.getElementById('visit-counter')
-);
+window.VisitCounter = VisitCounter;
