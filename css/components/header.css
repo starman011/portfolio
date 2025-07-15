@@ -221,13 +221,16 @@
     }
 }
 
-/* Smaller navigation pills on large screens */
+/* Navbar shrink effect on large screens */
 @media (min-width: 992px) {
-    .nav-link {
+    .site-header.navbar-shrink {
+        padding: 0.25rem 0.75rem;
+    }
+    .site-header.navbar-shrink .nav-link {
         width: 28px;
         height: 28px;
     }
-    .nav-item i {
+    .site-header.navbar-shrink .nav-item i {
         font-size: 0.9rem;
     }
 }
