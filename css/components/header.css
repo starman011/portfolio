@@ -77,6 +77,11 @@
     background-color: #000;
 }
 
+/* Ensure underline stays black on hover */
+.nav-link:hover::after {
+    background-color: #000;
+}
+
 /* Glossy header effect */
 .site-header::before {
     content: "";
