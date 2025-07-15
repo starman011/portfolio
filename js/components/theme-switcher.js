@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function createHolographicGradient(time, useColor) {
         if (!useColor) {
             // Plain dark background when color mode is off
-            document.body.style.background = '#111';
+            document.body.style.background = '#000';
             document.documentElement.style.setProperty('--overlay-opacity', '0');
             document.documentElement.style.setProperty('--holo-gradient-1', 'none');
             document.documentElement.style.setProperty('--holo-gradient-2', 'none');

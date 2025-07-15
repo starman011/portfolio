@@ -5,7 +5,7 @@ body[data-theme="dark"] {
     --bg-color: var(--bg-dark);
     --text-color: #f5f5dc; /* Explicitly set to beige */
     --header-bg: var(--header-bg-dark);
-    --footer-bg: rgba(18, 18, 18, 0.7);
+    --footer-bg: rgba(0, 0, 0, 0.7);
     --border-color: var(--border-dark);
 
     /* Holographic Gradients - Dark Theme */
