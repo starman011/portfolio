@@ -6,8 +6,8 @@
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    width: fit-content;
-    max-width: 90vw;
+    width: 100%;
+    max-width: 100%;
     padding: 0.5rem 1rem;
     border-radius: 50px;
     z-index: 1000;
@@ -41,8 +41,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: clamp(32px, 9vw, 44px);
-    height: clamp(32px, 9vw, 44px);
+    width: clamp(28px, 7vw, 36px);
+    height: clamp(28px, 7vw, 36px);
 }
 
 .nav-link.active {
@@ -103,8 +103,8 @@
 /* React Theme Toggle */
 .react-theme-toggle {
     cursor: pointer;
-    width: clamp(26px, 9vw, 38px);
-    height: clamp(26px, 9vw, 38px);
+    width: clamp(22px, 7vw, 32px);
+    height: clamp(22px, 7vw, 32px);
     background: transparent;
     border: none;
     display: flex;
@@ -169,7 +169,7 @@
 .nav-item i {
     color: #00224D;
     margin-right: 0;
-    font-size: clamp(0.8rem, 3vw, 1.1rem);
+    font-size: clamp(0.7rem, 2.5vw, 1rem);
     line-height: 1;
     transition: font-size 0.3s ease;
 }
@@ -203,21 +203,21 @@
 
 @media (max-width: 420px) {
     .site-header {
-        width: 95%;
+        width: 100%;
         max-width: none;
     }
     .nav-link {
-        width: clamp(36px, 12vw, 44px);
-        height: clamp(36px, 12vw, 44px);
+        width: clamp(28px, 9vw, 36px);
+        height: clamp(28px, 9vw, 36px);
     }
     .nav-item i {
-        font-size: clamp(1rem, 4vw, 1.2rem);
+        font-size: clamp(0.8rem, 4vw, 1rem);
     }
 }
 
 @media (max-width: 320px) {
     .site-header {
-        width: 99%;
+        width: 100%;
     }
 }
 
