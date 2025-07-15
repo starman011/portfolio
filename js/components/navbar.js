@@ -5,17 +5,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
   if (!header) return;
 
-  // Add or remove scrolled class based on scroll position
+  // Add or remove scrolled and shrink classes based on scroll position
   function updateHeader() {
     if (window.scrollY > 50) {
       header.classList.add('navbar-scrolled');
     } else {
       header.classList.remove('navbar-scrolled');
     }
+
+    const isDesktop = window.innerWidth >= 992;
+    if (isDesktop && window.scrollY > 150) {
+      header.classList.add('navbar-shrink');
+    } else {
+      header.classList.remove('navbar-shrink');
+    }
   }
 
   updateHeader();
   window.addEventListener('scroll', updateHeader);
+  window.addEventListener('resize', updateHeader);
 
   // Section highlighting for active nav links
   const sections = Array.from(navLinks)
