@@ -49,4 +49,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach((section) => observer.observe(section));
   }
+
+  // Light haptic feedback on navigation interaction
+  navLinks.forEach((link) => {
+    link.addEventListener('pointerdown', () => {
+      if ('vibrate' in navigator) {
+        navigator.vibrate(20);
+      }
+    });
+  });
 });
