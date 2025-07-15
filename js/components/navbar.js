@@ -60,10 +60,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Light haptic feedback on navigation interaction
   navLinks.forEach((link) => {
-    link.addEventListener('pointerdown', () => {
-      if ('vibrate' in navigator) {
-        navigator.vibrate(20);
+    const triggerVibrate = () => {
+      const vibrateFn =
+        navigator.vibrate ||
+        navigator.webkitVibrate ||
+        navigator.mozVibrate ||
+        navigator.msVibrate;
+      if (typeof vibrateFn === 'function') {
+        vibrateFn.call(navigator, 20);
       }
-    });
+    };
+
+    link.addEventListener('pointerdown', triggerVibrate);
+    link.addEventListener('touchstart', triggerVibrate);
   });
 });

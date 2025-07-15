@@ -72,6 +72,11 @@
     left: 0;
 }
 
+/* Active nav underline color */
+.nav-link.active::after {
+    background-color: #000;
+}
+
 /* Glossy header effect */
 .site-header::before {
     content: "";
