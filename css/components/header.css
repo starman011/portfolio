@@ -40,6 +40,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 48px;
+    height: 48px;
 }
 
 .nav-link.active {
@@ -167,6 +169,7 @@
     color: #00224D;
     margin-right: 0;
     font-size: 1.2rem;
+    line-height: 1;
     transition: font-size 0.3s ease;
 }
 
@@ -206,17 +209,41 @@
     .nav-item i {
         font-size: 1rem;
     }
+    .nav-link {
+        width: 40px;
+        height: 40px;
+    }
+    .react-theme-toggle {
+        width: 34px;
+        height: 34px;
+    }
 }
 
 @media (max-width: 480px) {
     .nav-item i {
         font-size: 0.9rem;
     }
+    .nav-link {
+        width: 36px;
+        height: 36px;
+    }
+    .react-theme-toggle {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 @media (max-width: 360px) {
     .nav-item i {
         font-size: 0.8rem;
+    }
+    .nav-link {
+        width: 32px;
+        height: 32px;
+    }
+    .react-theme-toggle {
+        width: 26px;
+        height: 26px;
     }
 }
 
