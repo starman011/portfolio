@@ -2,8 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Theme switcher initialized');
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    const themeIcon = document.getElementById('theme-icon');
-    if (window.feather && themeIcon) { feather.replace(); }
+    const iconEl = themeToggleBtn ? themeToggleBtn.querySelector('.icon') : null;
 
     // Animation state
     let animationRunning = false;
@@ -25,18 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isLight) {
                 applyDarkTheme();
                 localStorage.setItem('theme', 'dark');
-                if (themeIcon) themeIcon.setAttribute('data-feather', 'moon');
             } else {
                 applyLightTheme();
                 localStorage.setItem('theme', 'light');
-                if (themeIcon) themeIcon.setAttribute('data-feather', 'sun');
             }
 
-            if (window.feather && themeIcon) { feather.replace(); }
-            if (themeIcon) {
-                themeIcon.classList.add('icon-animate');
-                themeIcon.addEventListener('animationend', () => {
-                    themeIcon.classList.remove('icon-animate');
+            updateButton();
+
+            if (iconEl) {
+                iconEl.classList.add('icon-animate');
+                iconEl.addEventListener('animationend', () => {
+                    iconEl.classList.remove('icon-animate');
                 }, { once: true });
             }
 
@@ -166,16 +164,26 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.setAttribute('data-theme', themeName);
     }
 
+    function updateButton() {
+        if (!themeToggleBtn) return;
+        const current = document.body.getAttribute('data-theme');
+        if (current === 'light') {
+            themeToggleBtn.classList.remove('dark');
+            themeToggleBtn.classList.add('light');
+        } else {
+            themeToggleBtn.classList.remove('light');
+            themeToggleBtn.classList.add('dark');
+        }
+    }
+
     // On page load: apply saved theme or default to dark
     const savedTheme = localStorage.getItem('theme') || 'dark';
     if (savedTheme === 'light') {
         applyLightTheme();
-        if (themeIcon) themeIcon.setAttribute('data-feather', 'sun');
     } else {
         applyDarkTheme();
-        if (themeIcon) themeIcon.setAttribute('data-feather', 'moon');
     }
-    if (window.feather && themeIcon) { feather.replace(); }
+    updateButton();
 
     // Expose theme functions globally for React component
     window.applyDarkTheme = applyDarkTheme;
