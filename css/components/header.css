@@ -98,14 +98,24 @@
 /* Theme Toggle Button */
 .theme-toggle {
     cursor: pointer;
-    width: clamp(22px, 7vw, 32px);
-    height: clamp(22px, 7vw, 32px);
+    width: clamp(28px, 7vw, 36px);
+    height: clamp(28px, 7vw, 36px);
     background: transparent;
-    border: none;
+    border: 2px solid currentColor;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle.light {
+    color: #000;
+}
+
+.theme-toggle.dark {
+    color: #fff;
 }
 
 .theme-toggle .icon {
@@ -124,15 +134,17 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: var(--bg-color);
+    /* Use solid black so the moon cut-out blends with the page */
+    background: #000;
     opacity: 0;
     transform: scale(0);
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .theme-toggle.dark .icon {
-    background: #f5f5dc;
-    box-shadow: inset -8px -8px 0 0 #111111;
+    /* White circle for the moon */
+    background: #fff;
+    box-shadow: inset -8px -8px 0 0 #000;
 }
 
 .theme-toggle.dark .icon::before {
@@ -141,16 +153,17 @@
 }
 
 .theme-toggle.light .icon {
-    background: #f6c358;
+    /* Black sun with minimalistic rays */
+    background: #000;
     box-shadow:
-        0 -6px 0 #f6c358,
-        0 6px 0 #f6c358,
-        6px 0 0 #f6c358,
-        -6px 0 0 #f6c358,
-        4px 4px 0 #f6c358,
-        -4px 4px 0 #f6c358,
-        4px -4px 0 #f6c358,
-        -4px -4px 0 #f6c358;
+        0 -6px 0 #000,
+        0 6px 0 #000,
+        6px 0 0 #000,
+        -6px 0 0 #000,
+        4px 4px 0 #000,
+        -4px 4px 0 #000,
+        4px -4px 0 #000,
+        -4px -4px 0 #000;
 }
 
 .theme-toggle.light .icon::before {
