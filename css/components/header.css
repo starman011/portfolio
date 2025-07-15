@@ -221,3 +221,14 @@
     }
 }
 
+/* Smaller navigation pills on large screens */
+@media (min-width: 992px) {
+    .nav-link {
+        width: 28px;
+        height: 28px;
+    }
+    .nav-item i {
+        font-size: 0.9rem;
+    }
+}
+
