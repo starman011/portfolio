@@ -10,31 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.documentElement.setAttribute('data-theme', currentTheme);
     document.body.setAttribute('data-theme', currentTheme);
 
-    // Set theme toggle button state if element exists
-    const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    if (themeToggleBtn) {
-        const icon = document.getElementById('theme-icon');
-        if (window.feather) { feather.replace(); }
-        if (currentTheme === 'light') {
-            icon.setAttribute('data-feather', 'sun');
-        } else {
-            icon.setAttribute('data-feather', 'moon');
-        }
-        if (window.feather) { feather.replace(); }
-
-        // Add event listener to theme toggle
-        themeToggleBtn.addEventListener('click', function() {
-            const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            localStorage.setItem('theme', newTheme);
-            applyTheme(newTheme);
-            icon.classList.add('icon-animate');
-            icon.setAttribute('data-feather', newTheme === 'light' ? 'sun' : 'moon');
-            if (window.feather) { feather.replace(); }
-            icon.addEventListener('animationend', function() {
-                icon.classList.remove('icon-animate');
-            }, { once: true });
-        });
-    }
 
     // Initialize dark mode toggle utility
     darkModeToggle.init();
@@ -134,12 +109,11 @@ const darkModeToggle = {
         localStorage.setItem('theme', 'dark');
         applyTheme('dark');
 
-        // Update theme toggle icon if it exists
+        // Update theme toggle button class if it exists
         const themeToggleBtn = document.getElementById('theme-toggle-btn');
         if (themeToggleBtn) {
-            const icon = themeToggleBtn.querySelector('i');
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
+            themeToggleBtn.classList.remove('light');
+            themeToggleBtn.classList.add('dark');
         }
     },
 
@@ -153,12 +127,11 @@ const darkModeToggle = {
         localStorage.setItem('theme', 'light');
         applyTheme('light');
 
-        // Update theme toggle icon if it exists
+        // Update theme toggle button class if it exists
         const themeToggleBtn = document.getElementById('theme-toggle-btn');
         if (themeToggleBtn) {
-            const icon = themeToggleBtn.querySelector('i');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
+            themeToggleBtn.classList.remove('dark');
+            themeToggleBtn.classList.add('light');
         }
     },
 
