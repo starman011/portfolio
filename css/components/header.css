@@ -201,3 +201,23 @@
     }
 }
 
+@media (max-width: 420px) {
+    .site-header {
+        width: 95%;
+        max-width: none;
+    }
+    .nav-link {
+        width: clamp(36px, 12vw, 44px);
+        height: clamp(36px, 12vw, 44px);
+    }
+    .nav-item i {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+}
+
+@media (max-width: 320px) {
+    .site-header {
+        width: 99%;
+    }
+}
+
