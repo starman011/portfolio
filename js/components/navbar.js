@@ -30,6 +30,14 @@ window.addEventListener('DOMContentLoaded', () => {
     .map((link) => document.querySelector(link.getAttribute('href')))
     .filter((el) => el);
 
+  // Highlight nav link immediately on click
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.forEach((l) => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
       (entries) => {
