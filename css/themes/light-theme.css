@@ -10,6 +10,7 @@ body[data-theme="light"] {
     --card-bg: rgba(0, 0, 0, 0.05);
     --alt-bg: var(--black);
     --alt-text: var(--beige);
+    --icon-color: #000;
 
     --holo-gradient-1: none;
     --holo-gradient-2: none;
