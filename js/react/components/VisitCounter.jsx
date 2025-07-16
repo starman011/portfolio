@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'https://esm.sh/react@17.0.2';
+const { useState, useEffect } = React;
 
-export default function VisitCounter() {
+function VisitCounter() {
   const [count, setCount] = useState(null);
 
   useEffect(() => {
@@ -57,3 +57,4 @@ export default function VisitCounter() {
   );
 }
 
+window.VisitCounter = VisitCounter;
