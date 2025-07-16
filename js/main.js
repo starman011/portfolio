@@ -41,11 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Display a random image when the page loads
         displayRandomImage();
 
-        // Change image on enter site button click if it exists
-        const enterSiteBtn = document.getElementById('enter-site-btn');
-        if (enterSiteBtn) {
-            enterSiteBtn.addEventListener('click', displayRandomImage);
-        }
     }
     const backToTopBtn = document.getElementById("back-to-top");
     if (backToTopBtn) {
