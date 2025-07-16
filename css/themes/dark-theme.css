@@ -1,22 +1,20 @@
 /* Dark Theme Specific Styles */
 body[data-theme="dark"] {
-    --primary-color: var(--primary-color-dark);
-    --secondary-color: var(--secondary-color-dark);
-    --bg-color: var(--bg-dark);
-    --text-color: #f5f5dc; /* Explicitly set to beige */
-    --header-bg: var(--header-bg-dark);
-    --footer-bg: rgba(0, 0, 0, 0.7);
-    --border-color: var(--border-dark);
+    --bg-color: var(--black);
+    --text-color: var(--beige);
+    --primary-color: var(--beige);
+    --secondary-color: var(--red);
+    --header-bg: rgba(0, 0, 0, 0.85);
+    --footer-bg: rgba(0, 0, 0, 0.9);
+    --border-color: rgba(245, 245, 220, 0.1);
+    --card-bg: rgba(245, 245, 220, 0.15);
+    --alt-bg: var(--beige);
+    --alt-text: var(--black);
 
-    /* Holographic Gradients - Dark Theme */
-    --holo-gradient-1: linear-gradient(45deg, rgba(38, 38, 38, 0.9), rgba(61, 95, 115, 0.8), rgba(77, 68, 95, 0.7), rgba(109, 80, 110, 0.8), rgba(38, 38, 38, 0.9));
-    --holo-gradient-2: linear-gradient(135deg, rgba(31, 31, 31, 0.9), rgba(56, 89, 107, 0.8), rgba(73, 94, 101, 0.7), rgba(78, 112, 117, 0.8), rgba(31, 31, 31, 0.9));
-
-    /* Dynamic background variables */
-    --bg-opacity: 0.05;
-    --overlay-opacity: 0.03;
-
-    /* Default text color for dark theme */
+    --holo-gradient-1: none;
+    --holo-gradient-2: none;
+    --bg-opacity: 0;
+    --overlay-opacity: 0;
     color: var(--text-color);
 }
 
@@ -46,16 +44,5 @@ body[data-theme="dark"] #skills,
 body[data-theme="dark"] #skills *,
 body[data-theme="dark"] #experience,
 body[data-theme="dark"] #experience * {
-    color: #000 !important;
-}
-
-/* Animation for dark theme transition */
-@keyframes lightToDark {
-    0% { opacity: 0.8; }
-    50% { opacity: 0.4; }
-    100% { opacity: 0.8; }
-}
-
-.dark-theme-active::after {
-    animation: lightToDark 1s forwards;
+    color: var(--black) !important;
 }

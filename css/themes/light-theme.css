@@ -1,28 +1,26 @@
 /* Light Theme Specific Styles */
 body[data-theme="light"] {
-    --primary-color: var(--primary-color-light);
-    --secondary-color: var(--secondary-color-light);
-    --bg-color: var(--bg-light);
-    --text-color: #f5f5dc; /* Beige text for consistency */
-    --header-bg: var(--header-bg-light);
+    --bg-color: var(--beige);
+    --text-color: var(--black);
+    --primary-color: var(--black);
+    --secondary-color: var(--red);
+    --header-bg: rgba(245, 245, 220, 0.85);
     --footer-bg: rgba(245, 245, 220, 0.5);
-    --border-color: var(--border-light);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --card-bg: rgba(0, 0, 0, 0.05);
+    --alt-bg: var(--black);
+    --alt-text: var(--beige);
 
-    /* Holographic Gradients - Light Theme */
-    --holo-gradient-1: linear-gradient(45deg, rgba(245, 245, 220, 0.9), rgba(143, 213, 255, 0.8), rgba(177, 156, 217, 0.7), rgba(249, 184, 253, 0.8), rgba(245, 245, 220, 0.9));
-    --holo-gradient-2: linear-gradient(135deg, rgba(245, 245, 220, 0.9), rgba(160, 216, 239, 0.8), rgba(185, 223, 237, 0.7), rgba(200, 240, 245, 0.8), rgba(245, 245, 220, 0.9));
-
-    /* Dynamic background variables */
-    --bg-opacity: 0.04;
-    --overlay-opacity: 0.02;
-
-    /* Default text color for light theme */
+    --holo-gradient-1: none;
+    --holo-gradient-2: none;
+    --bg-opacity: 0;
+    --overlay-opacity: 0;
     color: var(--text-color);
 }
 
 /* Ensure skill cards are readable in light theme */
 body[data-theme="light"] .skill-card {
-    color: #000;
+    color: var(--black);
 }
 
 /* Override text color for specific sections */
@@ -30,5 +28,5 @@ body[data-theme="light"] #skills,
 body[data-theme="light"] #skills *,
 body[data-theme="light"] #experience,
 body[data-theme="light"] #experience * {
-    color: #000 !important;
+    color: var(--black) !important;
 }

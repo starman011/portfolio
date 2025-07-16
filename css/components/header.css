@@ -1,7 +1,7 @@
 /* Header Styles */
 .site-header {
     background-color: var(--header-bg);
-    box-shadow: 0 2px 10px rgba(0, 34, 77, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     bottom: 40px;
     left: 50%;
@@ -184,7 +184,7 @@
 /* Scrolled state */
 .site-header.navbar-scrolled {
     background-color: var(--header-bg);
-    box-shadow: 0 2px 10px rgba(0, 34, 77, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Icon + text visibility */
