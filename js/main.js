@@ -11,8 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.setAttribute('data-theme', currentTheme);
 
 
-    // Initialize dark mode toggle utility
-    darkModeToggle.init();
 
     // ===== Random Background Image =====
     // Array of image sources for the hero background
@@ -70,94 +68,3 @@ function applyTheme(theme) {
         document.body.classList.add('light-theme-active');
     }
 }
-
-// Dark Mode Toggle Utility
-const darkModeToggle = {
-    // Initialize dark mode toggle
-    init: function() {
-        // Check for saved preference or system preference
-        const savedPreference = localStorage.getItem('dark-mode');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        // Apply initial mode
-        if (savedPreference === 'enabled' || (savedPreference === null && systemPrefersDark)) {
-            this.enableDarkMode();
-        } else {
-            this.disableDarkMode();
-        }
-
-        // Add event listeners
-        this.addEventListeners();
-    },
-
-    // Toggle between dark and light modes
-    toggle: function() {
-        if (document.body.classList.contains('dark-mode')) {
-            this.disableDarkMode();
-        } else {
-            this.enableDarkMode();
-        }
-    },
-
-    // Enable dark mode
-    enableDarkMode: function() {
-        document.body.classList.add('dark-mode');
-        localStorage.setItem('dark-mode', 'enabled');
-        this.updateToggleButtonUI();
-
-        // Also update the theme system
-        localStorage.setItem('theme', 'dark');
-        applyTheme('dark');
-
-        // Update theme toggle button class if it exists
-        const themeToggleBtn = document.getElementById('theme-toggle-btn');
-        if (themeToggleBtn) {
-            themeToggleBtn.classList.remove('light');
-            themeToggleBtn.classList.add('dark');
-        }
-    },
-
-    // Disable dark mode
-    disableDarkMode: function() {
-        document.body.classList.remove('dark-mode');
-        localStorage.setItem('dark-mode', 'disabled');
-        this.updateToggleButtonUI();
-
-        // Also update the theme system
-        localStorage.setItem('theme', 'light');
-        applyTheme('light');
-
-        // Update theme toggle button class if it exists
-        const themeToggleBtn = document.getElementById('theme-toggle-btn');
-        if (themeToggleBtn) {
-            themeToggleBtn.classList.remove('dark');
-            themeToggleBtn.classList.add('light');
-        }
-    },
-
-    // Add event listeners
-    addEventListeners: function() {
-        // Listen for system dark mode changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (localStorage.getItem('dark-mode') === null) {
-                e.matches ? this.enableDarkMode() : this.disableDarkMode();
-            }
-        });
-
-        // Add click event to toggle button if it exists
-        const toggleButton = document.getElementById('dark-mode-toggle');
-        if (toggleButton) {
-            toggleButton.addEventListener('click', () => this.toggle());
-        }
-    },
-
-    // Update toggle button UI
-    updateToggleButtonUI: function() {
-        const toggleButton = document.getElementById('dark-mode-toggle');
-        if (toggleButton) {
-            const isDarkMode = document.body.classList.contains('dark-mode');
-            toggleButton.setAttribute('aria-pressed', isDarkMode);
-            toggleButton.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
-        }
-    }
-};
