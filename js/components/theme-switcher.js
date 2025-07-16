@@ -1,8 +1,7 @@
 // Dynamic theme switcher with multiple-color holographic gradients
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Theme switcher initialized');
-    const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    const iconEl = themeToggleBtn ? themeToggleBtn.querySelector('.icon') : null;
+
 
     // Animation state
     let animationRunning = false;
@@ -10,38 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize dynamic background effects
     startBackgroundAnimation();
-
-    // Toggle theme when the button is clicked
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', function() {
-            console.log('Theme toggle button clicked');
-
-            // Stop current animation
-            stopBackgroundAnimation();
-
-            const isLight = document.body.getAttribute('data-theme') === 'light';
-
-            if (isLight) {
-                applyDarkTheme();
-                localStorage.setItem('theme', 'dark');
-            } else {
-                applyLightTheme();
-                localStorage.setItem('theme', 'light');
-            }
-
-            updateButton();
-
-            if (iconEl) {
-                iconEl.classList.add('icon-animate');
-                iconEl.addEventListener('animationend', () => {
-                    iconEl.classList.remove('icon-animate');
-                }, { once: true });
-            }
-
-            // Restart animation
-            startBackgroundAnimation();
-        });
-    }
 
     // Start the background animation
     function startBackgroundAnimation() {
@@ -164,18 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.setAttribute('data-theme', themeName);
     }
 
-    function updateButton() {
-        if (!themeToggleBtn) return;
-        const current = document.body.getAttribute('data-theme');
-        if (current === 'light') {
-            themeToggleBtn.classList.remove('dark');
-            themeToggleBtn.classList.add('light');
-        } else {
-            themeToggleBtn.classList.remove('light');
-            themeToggleBtn.classList.add('dark');
-        }
-    }
-
     // On page load: apply saved theme or default to dark
     const savedTheme = localStorage.getItem('theme') || 'dark';
     if (savedTheme === 'light') {
@@ -183,7 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         applyDarkTheme();
     }
-    updateButton();
 
     // Expose theme functions globally for React component
     window.applyDarkTheme = applyDarkTheme;

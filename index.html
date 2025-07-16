@@ -23,6 +23,7 @@
     <!-- Theme CSS -->
     <link rel="stylesheet" href="css/themes/light-theme.css">
     <link rel="stylesheet" href="css/themes/dark-theme.css">
+    <link rel="stylesheet" href="https://unpkg.com/@theme-toggles/react@4.1.0/css/Classic.css">
     <!-- Hero Overlay CSS & JS -->
     <link rel="stylesheet" href="css/hero-overlay.css">
     <script src="js/hero-overlay.js" defer></script>
@@ -75,9 +76,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#contact"><i class="fas fa-envelope-open"></i><span class="nav-text">Contact</span></a>
                         </li>
-                        <li class="nav-item ms-3 d-flex align-items-center">
-                            <button id="theme-toggle-btn" class="theme-toggle" aria-label="Toggle theme"><span class="icon"></span></button>
-                        </li>
+                        <li class="nav-item ms-3 d-flex align-items-center" id="theme-toggle-root"></li>
                     </ul>
                 </div>
         </nav>
@@ -427,14 +426,7 @@
     <script src="js/components/dynamic-island.js"></script>
     <!-- Utils JS -->
     <script src="js/utils/storage.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js" crossorigin></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js" crossorigin></script>
-    <script src="https://unpkg.com/@emotion/react@11.11.1/dist/emotion-react.umd.min.js" crossorigin></script>
-    <script src="https://unpkg.com/@emotion/styled@11.11.0/dist/emotion-styled.umd.min.js" crossorigin></script>
-    <script src="https://unpkg.com/@mui/material@5.15.8/umd/material-ui.development.js" crossorigin></script>
-    <script type="text/babel" src="js/react/components/VisitCounter.jsx"></script>
-    <script type="text/babel" src="js/react/main.jsx"></script>
+    <script type="module" src="js/react/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" defer></script>
 </body>
 
