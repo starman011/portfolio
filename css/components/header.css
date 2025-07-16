@@ -1,6 +1,6 @@
 /* Header Styles */
 .site-header {
-    background-color: #f5f5dc;
+    background-color: var(--header-bg);
     box-shadow: 0 2px 10px rgba(0, 34, 77, 0.1);
     position: fixed;
     bottom: 40px;
@@ -90,7 +90,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #f5f5dc;
+    background-color: var(--header-bg);
     z-index: -1;
     border-radius: 50px;
 }
@@ -134,8 +134,8 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    /* Use solid black so the moon cut-out blends with the page */
-    background: #000;
+    /* Match header background so the moon cut-out blends in */
+    background: var(--header-bg);
     opacity: 0;
     transform: scale(0);
     transition: transform 0.5s ease, opacity 0.5s ease;
@@ -144,7 +144,8 @@
 .theme-toggle.dark .icon {
     /* White circle for the moon */
     background: #fff;
-    box-shadow: inset -8px -8px 0 0 #000;
+    /* Create crescent by masking with header background */
+    box-shadow: inset -8px -8px 0 0 var(--header-bg);
 }
 
 .theme-toggle.dark .icon::before {
@@ -182,7 +183,7 @@
 }
 /* Scrolled state */
 .site-header.navbar-scrolled {
-    background-color: #f5f5dc;
+    background-color: var(--header-bg);
     box-shadow: 0 2px 10px rgba(0, 34, 77, 0.2);
 }
 
