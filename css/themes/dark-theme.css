@@ -38,7 +38,7 @@ body[data-theme="dark"] .portfolio-content p {
 
 /* Ensure skill cards have a dark background and white text */
 body[data-theme="dark"] .skill-card {
-    color: #f5f5dc;
+    color: #2cff05;
 }
 
 /* Override text color for specific sections */
@@ -46,7 +46,7 @@ body[data-theme="dark"] #skills,
 body[data-theme="dark"] #skills *,
 body[data-theme="dark"] #experience,
 body[data-theme="dark"] #experience * {
-    color: #f5f5dc !important;
+    color: #2cff05 !important;
 }
 
 /* Animation for dark theme transition */
