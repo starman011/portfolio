@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'https://esm.sh/react@17.0.2';
 import ReactDOM from 'https://esm.sh/react-dom@17.0.2';
 import { DarkModeSwitch } from 'https://esm.sh/react-toggle-dark-mode@1.1.1?deps=react@17.0.2,react-dom@17.0.2';
 
+import Lanyard from "./Lanyard.mjs";
 function VisitCounter() {
   const [count, setCount] = useState(null);
 
@@ -84,6 +85,10 @@ function initReactWidgets() {
     ReactDOM.render(React.createElement(VisitCounter), counterEl);
   }
   const toggleEl = document.getElementById('dark-mode-toggle');
+  const lanyardEl = document.getElementById("lanyard-container");
+  if (lanyardEl) {
+    ReactDOM.render(React.createElement(Lanyard, { position: [0,0,20], gravity: [0,-40,0] }), lanyardEl);
+  }
   if (toggleEl) {
     ReactDOM.render(React.createElement(ThemeToggle), toggleEl);
   }
