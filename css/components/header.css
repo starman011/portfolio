@@ -134,8 +134,8 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    /* Match header background so the moon cut-out blends in */
-    background: var(--header-bg);
+    /* Solid color to ensure the crescent blends correctly */
+    background: #000;
     opacity: 0;
     transform: scale(0);
     transition: transform 0.5s ease, opacity 0.5s ease;
@@ -144,8 +144,8 @@
 .theme-toggle.dark .icon {
     /* White circle for the moon */
     background: #fff;
-    /* Create crescent by masking with header background */
-    box-shadow: inset -8px -8px 0 0 var(--header-bg);
+    /* Create crescent by masking with a solid color */
+    box-shadow: inset -8px -8px 0 0 #000;
 }
 
 .theme-toggle.dark .icon::before {
