@@ -29,7 +29,7 @@
     margin-bottom: 2rem;
     border-radius: 0.5rem;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 34, 77, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: transparent;
     position: relative;
@@ -37,7 +37,7 @@
 
 .portfolio-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 34, 77, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Holographic effect for portfolio items */
@@ -127,12 +127,12 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 0.5rem;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 34, 77, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 34, 77, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .card-img-top {

@@ -2,24 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Fira+Code:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap');
 
 :root {
-    /* Real Dark Theme Colors */
-    --primary-color-light: #2c3e50;
-    --secondary-color-light: #3498db;
-    --bg-light: #f8f9fa;
-    --text-light: #f5f5dc; /* unused now */
-    --header-bg-light: rgba(245, 245, 220, 0.85);
-    --footer-bg-light: #f5f5dc;
-    --border-light: rgb(245, 245, 220);
+    --black: #000;
+    --beige: #f5f5dc;
+    --red: #ee3224;
 
-    /* Multi Color Theme Colors */
-    --primary-color-dark: #bb86fc;
-    --secondary-color-dark: #03dac6;
-    --bg-dark: #000000;
-    --text-dark: #f5f5dc; /* unused now */
-    --header-bg-dark: rgba(245, 245, 220, 0.85);
-    --footer-bg-dark: rgba(0, 0, 0, 0.9);
-    --border-dark: rgba(245, 245, 220, 0.1);
-    --text-color: #f5f5dc;
+    --primary-color: var(--beige);
+    --secondary-color: var(--red);
+    --bg-color: var(--black);
+    --text-color: var(--beige);
+    --header-bg: rgba(0, 0, 0, 0.85);
+    --footer-bg: var(--black);
+    --border-color: rgba(245, 245, 220, 0.3);
     --card-bg: rgba(245, 245, 220, 0.15);
 }
 

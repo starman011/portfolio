@@ -7,7 +7,7 @@
     background-color: transparent;
     border-radius: 0.5rem;
     padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 34, 77, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
