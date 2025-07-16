@@ -70,10 +70,11 @@ function ThemeToggle() {
   };
 
   return React.createElement(DarkModeSwitch, {
-    style: { marginBottom: '2rem' },
     checked: isDarkMode,
     onChange: toggleDarkMode,
-    size: 24
+    size: 24,
+    moonColor: '#000',
+    sunColor: '#000'
   });
 }
 
