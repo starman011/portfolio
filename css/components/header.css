@@ -193,7 +193,11 @@
     margin-right: 0;
     font-size: clamp(0.7rem, 2.5vw, 1rem);
     line-height: 1;
-    transition: font-size 0.3s ease;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+body[data-theme="dark"] .nav-item i {
+    color: #fff !important;
 }
 
 .nav-text {
