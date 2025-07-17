@@ -44,9 +44,6 @@
     width: clamp(28px, 7vw, 36px);
     height: clamp(28px, 7vw, 36px);
     position: relative;
-}
-
-body[data-theme="dark"] .nav-link {
     background-color: var(--nav-pill-bg);
     border-radius: 50%;
 }
@@ -201,9 +198,6 @@ body[data-theme="dark"] .nav-link {
     transition: color 0.3s ease, font-size 0.3s ease;
 }
 
-body[data-theme="dark"] .nav-item i {
-    color: #fff !important;
-}
 
 .nav-text {
     display: none;

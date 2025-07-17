@@ -10,8 +10,8 @@ body[data-theme="dark"] {
     --card-bg: rgba(245, 245, 220, 0.15);
     --alt-bg: var(--beige);
     --alt-text: var(--black);
-    --icon-color: #fff;
-    --nav-pill-bg: var(--gensler-red);
+    --icon-color: #000;
+    --nav-pill-bg: var(--beige);
 
     --holo-gradient-1: none;
     --holo-gradient-2: none;
