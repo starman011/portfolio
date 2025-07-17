@@ -44,7 +44,8 @@
     width: clamp(28px, 7vw, 36px);
     height: clamp(28px, 7vw, 36px);
     position: relative;
-    background-color: var(--nav-pill-bg) !important;
+    /* Keep navigation pills beige regardless of theme */
+    background-color: var(--beige) !important;
     border-radius: 50%;
 }
 
@@ -192,6 +193,7 @@
 /* Icon + text visibility */
 .nav-item i {
     color: var(--icon-color) !important;
+    background-color: transparent !important;
     margin-right: 0;
     font-size: clamp(0.7rem, 2.5vw, 1rem);
     line-height: 1;
