@@ -16,7 +16,7 @@
     --border-color: rgba(245, 245, 220, 0.3);
     --card-bg: rgba(245, 245, 220, 0.15);
     --icon-color: var(--black);
-    --nav-pill-bg: var(--black);
+    --nav-pill-bg: var(--beige);
 }
 
 body, input, textarea, button, select, optgroup {
