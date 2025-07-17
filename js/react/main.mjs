@@ -58,7 +58,13 @@ function VisitCounter() {
 }
 
 function ThemeToggle() {
-  const [isDarkMode, setDarkMode] = useState(document.body.getAttribute('data-theme') === 'dark');
+  const [isDarkMode, setDarkMode] = useState(() => {
+    const stored = localStorage.getItem('theme');
+    if (stored) {
+      return stored === 'dark';
+    }
+    return true; // default to dark theme
+  });
 
   const toggleDarkMode = (checked) => {
     setDarkMode(checked);
