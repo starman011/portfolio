@@ -69,12 +69,14 @@ function ThemeToggle() {
     }
   };
 
+  const iconColor = isDarkMode ? '#f5f5dc' : '#000';
+
   return React.createElement(DarkModeSwitch, {
     checked: isDarkMode,
     onChange: toggleDarkMode,
     size: 24,
-    moonColor: '#f5f5dc',
-    sunColor: '#f5f5dc'
+    moonColor: iconColor,
+    sunColor: iconColor
   });
 }
 
