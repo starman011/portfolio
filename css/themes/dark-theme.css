@@ -11,6 +11,7 @@ body[data-theme="dark"] {
     --alt-bg: var(--beige);
     --alt-text: var(--black);
     --icon-color: #fff;
+    --nav-pill-bg: var(--gensler-red);
 
     --holo-gradient-1: none;
     --holo-gradient-2: none;

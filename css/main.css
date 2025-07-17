@@ -5,6 +5,7 @@
     --black: #000;
     --beige: #f5f5dc;
     --red: #ee3224;
+    --gensler-red: #da291c;
 
     --primary-color: var(--beige);
     --secondary-color: var(--red);
@@ -15,6 +16,7 @@
     --border-color: rgba(245, 245, 220, 0.3);
     --card-bg: rgba(245, 245, 220, 0.15);
     --icon-color: var(--black);
+    --nav-pill-bg: transparent;
 }
 
 body, input, textarea, button, select, optgroup {
