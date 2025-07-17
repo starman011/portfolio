@@ -118,7 +118,7 @@
 }
 
 .theme-toggle.dark {
-    color: #fff;
+    color: var(--beige);
 }
 
 .theme-toggle .icon {
@@ -145,8 +145,8 @@
 }
 
 .theme-toggle.dark .icon {
-    /* White circle for the moon */
-    background: #fff;
+    /* Beige circle for the moon */
+    background: var(--beige);
     /* Create crescent by masking with a solid color */
     box-shadow: inset -8px -8px 0 0 #000;
 }
