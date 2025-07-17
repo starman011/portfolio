@@ -46,6 +46,11 @@
     position: relative;
 }
 
+body[data-theme="dark"] .nav-link {
+    background-color: var(--nav-pill-bg);
+    border-radius: 50%;
+}
+
 /* Animated underline for hover/active state */
 .nav-link::after {
     content: '';
