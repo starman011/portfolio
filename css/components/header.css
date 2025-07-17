@@ -45,7 +45,7 @@
     height: clamp(28px, 7vw, 36px);
     position: relative;
     /* Keep navigation pills beige regardless of theme */
-    background-color: var(--nav-pill-bg) !important;
+    background-color: var(--beige) !important;
     border-radius: 50%;
 }
 
@@ -199,6 +199,12 @@
     font-size: clamp(0.7rem, 2.5vw, 1rem);
     line-height: 1;
     transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+/* Ensure icons themselves never display a background circle */
+.nav-link i {
+    background-color: transparent !important;
+    border-radius: 0 !important;
 }
 
 
