@@ -73,8 +73,8 @@ function ThemeToggle() {
     checked: isDarkMode,
     onChange: toggleDarkMode,
     size: 24,
-    moonColor: '#000',
-    sunColor: '#000'
+    moonColor: '#f5f5dc',
+    sunColor: '#f5f5dc'
   });
 }
 
