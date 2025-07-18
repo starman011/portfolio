@@ -44,24 +44,9 @@
     width: clamp(28px, 7vw, 36px);
     height: clamp(28px, 7vw, 36px);
     position: relative;
-    border: 2px solid transparent;
+    /* Keep navigation pills beige regardless of theme */
+    background-color: var(--beige) !important;
     border-radius: 50%;
-    background:
-        var(--beige) padding-box,
-        linear-gradient(120deg, var(--gensler-red), #ff0040, var(--gensler-red))
-        border-box;
-    background-size: 200% 200%;
-    background-clip: padding-box, border-box;
-    animation: nav-border-flow 4s linear infinite;
-}
-
-@keyframes nav-border-flow {
-    from {
-        background-position: 0% 50%;
-    }
-    to {
-        background-position: 100% 50%;
-    }
 }
 
 /* Animated underline for hover/active state */
