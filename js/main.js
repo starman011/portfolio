@@ -1,4 +1,7 @@
 // Main JavaScript file
+// Track when the loading started so we can enforce a minimum display time
+const loadingStart = Date.now();
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Portfolio website initialized');
 
@@ -64,14 +67,27 @@ function applyTheme(theme) {
     }
 }
 
-// Hide loader once the page has fully loaded
-window.addEventListener('load', function() {
+// Hide loader once the page has fully loaded but keep it visible
+// for at least 5 seconds to provide a consistent loading experience
+window.addEventListener('load', function () {
+    const MIN_LOADING_TIME = 5000; // in milliseconds
     const loader = document.getElementById('loading-screen');
     const content = document.getElementById('site-content');
-    if (loader) {
-        loader.style.display = 'none';
+
+    function showContent() {
+        if (loader) {
+            loader.style.display = 'none';
+        }
+        if (content) {
+            content.style.display = '';
+        }
     }
-    if (content) {
-        content.style.display = '';
+
+    const elapsed = Date.now() - loadingStart;
+    const remaining = MIN_LOADING_TIME - elapsed;
+    if (remaining > 0) {
+        setTimeout(showContent, remaining);
+    } else {
+        showContent();
     }
 });
