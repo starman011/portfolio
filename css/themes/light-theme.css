@@ -30,5 +30,5 @@ body[data-theme="light"] #skills,
 body[data-theme="light"] #skills *,
 body[data-theme="light"] #experience,
 body[data-theme="light"] #experience * {
-    color: var(--black) !important;
+    color: var(--beige) !important;
 }
