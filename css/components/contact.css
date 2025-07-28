@@ -1,6 +1,6 @@
 /* Contact Section Styles */
 .contact-section {
-    padding: 5rem 0;
+    padding: 3rem 0;
 }
 
 .contact-card {
@@ -8,12 +8,19 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 50px;
-    padding: 2rem;
+    padding: 1.5rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(245, 245, 220, 0.1);
+}
+
+/* Limit width of contact card container */
+.contact-section .section-card {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Apply glossy effect to contact cards */
