@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const url = card.dataset.url;
     const img = card.querySelector('.project-snapshot');
     if (url && img) {
-      img.src = `https://image.thum.io/get/${encodeURIComponent(url)}`;
+      // Thum.io expects the target URL directly in the path without encoding
+      img.src = `https://image.thum.io/get/${url}`;
     }
   });
 });
