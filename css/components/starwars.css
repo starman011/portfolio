@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil&display=swap');
+
+.starwars-selector {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.starwars-selector .side {
+    flex: 1;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Stardos Stencil', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.starwars-selector .dark-side {
+    background-color: #000;
+    color: #f5f5dc;
+}
+
+.starwars-selector .light-side {
+    background-color: #f5f5dc;
+    color: #000;
+}
+
+.starwars-selector .side:hover {
+    opacity: 0.8;
+}
+
+.starwars-main {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.starwars-sub {
+    font-size: 0.9rem;
+}
