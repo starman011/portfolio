@@ -1,0 +1,15 @@
+#dot-grid-root {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#site-content {
+    position: relative;
+    z-index: 1;
+}
+
+body[data-theme="light"] #dot-grid-root {
+    display: none;
+}
