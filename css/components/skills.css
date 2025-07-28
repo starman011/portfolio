@@ -19,4 +19,12 @@
     padding: 1.5rem;
     height: 100%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.skill-card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
