@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'https://esm.sh/react@17.0.2';
 import ReactDOM from 'https://esm.sh/react-dom@17.0.2';
-import { motion } from 'https://esm.sh/framer-motion@7.6.16?deps=react@17.0.2,react-dom@17.0.2';
 import { DarkModeSwitch } from 'https://esm.sh/react-toggle-dark-mode@1.1.1?deps=react@17.0.2,react-dom@17.0.2';
 
 function VisitCounter() {
@@ -87,51 +86,6 @@ function ThemeToggle() {
   });
 }
 
-function StarWarsSelector() {
-  const [selected, setSelected] = useState(null);
-
-  const triggerFilter = (category) => {
-    const btn = document.querySelector(`.portfolio-tab[data-filter="${category}"]`);
-    if (btn) btn.click();
-  };
-
-  const handleSelect = (side) => {
-    setSelected(side);
-    if (side === 'technology') {
-      window.applyDarkTheme && window.applyDarkTheme();
-      triggerFilter('technology');
-    } else {
-      window.applyLightTheme && window.applyLightTheme();
-      triggerFilter('architecture');
-    }
-    const grid = document.getElementById('project-grid');
-    grid && grid.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  return React.createElement('div', { className: 'starwars-selector' },
-    React.createElement(motion.div, {
-      className: `side dark-side ${selected === 'technology' ? 'selected' : ''}`,
-      onClick: () => handleSelect('technology'),
-      whileHover: { scale: 1.05 },
-      animate: selected === 'technology' ? { scale: 1.1 } : { scale: 1 }
-    }, [
-      React.createElement('div', { className: 'starwars-main' }, 'Technology'),
-      React.createElement('div', { className: 'starwars-sub' }, 'Dark Side'),
-      React.createElement('div', { className: 'lightsaber' })
-    ]),
-    React.createElement(motion.div, {
-      className: `side light-side ${selected === 'architecture' ? 'selected' : ''}`,
-      onClick: () => handleSelect('architecture'),
-      whileHover: { scale: 1.05 },
-      animate: selected === 'architecture' ? { scale: 1.1 } : { scale: 1 }
-    }, [
-      React.createElement('div', { className: 'starwars-main' }, 'Architecture'),
-      React.createElement('div', { className: 'starwars-sub' }, 'Light Side'),
-      React.createElement('div', { className: 'lightsaber' })
-    ])
-  );
-}
-
 function initReactWidgets() {
   const counterEl = document.getElementById('visit-counter');
   if (counterEl) {
@@ -140,10 +94,6 @@ function initReactWidgets() {
   const toggleEl = document.getElementById('dark-mode-toggle');
   if (toggleEl) {
     ReactDOM.render(React.createElement(ThemeToggle), toggleEl);
-  }
-  const starwarsEl = document.getElementById('starwars-selector');
-  if (starwarsEl) {
-    ReactDOM.render(React.createElement(StarWarsSelector), starwarsEl);
   }
 }
 
