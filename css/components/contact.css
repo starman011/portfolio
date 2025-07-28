@@ -56,7 +56,7 @@
     line-height: 40px;
     text-align: center;
     background-color: rgba(245, 245, 220, 0.1);
-    color: var(--text-color);
+    color: inherit;
     border-radius: 50%;
     margin-right: 10px;
     transition: all 0.3s ease;
@@ -72,7 +72,7 @@
 .form-control {
     background-color: rgba(245, 245, 220, 0.05);
     border: 1px solid var(--border-color);
-    color: var(--text-color);
+    color: inherit;
     transition: all 0.3s ease;
 }
 
@@ -80,9 +80,9 @@
     background-color: rgba(245, 245, 220, 0.1);
     border-color: var(--secondary-color);
     box-shadow: 0 0 0 0.25rem rgba(var(--secondary-color), 0.25);
-    color: var(--text-color);
+    color: inherit;
 }
 
 .form-label {
-    color: var(--text-color);
+    color: inherit;
 }

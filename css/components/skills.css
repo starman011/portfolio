@@ -3,7 +3,6 @@
     position: relative;
     overflow: hidden;
     background-color: var(--alt-bg);
-    color: var(--alt-text);
 }
 
 .skills-section .section-title {

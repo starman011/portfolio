@@ -1,7 +1,6 @@
 /* Dark Theme Specific Styles */
 body[data-theme="dark"] {
     --bg-color: var(--black);
-    --text-color: var(--beige);
     --primary-color: var(--beige);
     --secondary-color: var(--red);
     --header-bg: rgba(0, 0, 0, 0.85);
@@ -17,7 +16,7 @@ body[data-theme="dark"] {
     --holo-gradient-2: none;
     --bg-opacity: 0;
     --overlay-opacity: 0;
-    color: var(--text-color);
+    color: var(--beige);
 }
 
 /* Additional text color overrides for dark theme */
@@ -47,4 +46,18 @@ body[data-theme="dark"] #skills *,
 body[data-theme="dark"] #experience,
 body[data-theme="dark"] #experience * {
     color: var(--black) !important;
+}
+
+/* Section text colors */
+body[data-theme="dark"] .about-section,
+body[data-theme="dark"] .hero,
+body[data-theme="dark"] .portfolio-section,
+body[data-theme="dark"] .contact-section,
+body[data-theme="dark"] .footer {
+    color: var(--beige);
+}
+
+body[data-theme="dark"] .skills-section,
+body[data-theme="dark"] .experience-section {
+    color: var(--black);
 }

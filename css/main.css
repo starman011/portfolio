@@ -10,7 +10,6 @@
     --primary-color: var(--beige);
     --secondary-color: var(--red);
     --bg-color: var(--black);
-    --text-color: var(--beige);
     --header-bg: rgba(0, 0, 0, 0.85);
     --footer-bg: var(--black);
     --border-color: rgba(245, 245, 220, 0.3);
@@ -33,7 +32,6 @@ body, input, textarea, button, select, optgroup {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: var(--text-color); /* Theme-based text color */
     background-color: var(--bg-color);
     transition: color 0.3s ease;
 }
@@ -47,7 +45,6 @@ h1, h2, h3, h4, h5, h6 {
             monospace;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: var(--text-color); /* Theme-based text color */
     transition: color 0.3s ease;
 }
 
@@ -63,7 +60,6 @@ pre, code, kbd, samp {
     background-color: rgba(0,0,0,0.05);
     border-radius: 4px;
     padding: 0.2em 0.4em;
-    color: var(--text-color); /* Theme-based text color */
     transition: color 0.3s ease;
 }
 
@@ -87,19 +83,16 @@ pre {
     padding: 0.1em 0.3em;
     border-radius: 3px;
     margin: 0 0.2em;
-    color: var(--text-color); /* Theme-based text color */
     transition: color 0.3s ease;
 }
 
 /* Add styles for regular text */
 p, span, div, a:not(.btn), label, li {
-    color: var(--text-color); /* Theme-based text color */
     transition: color 0.3s ease;
 }
 
 /* Add styles for form elements */
 .form-control, .form-control:focus {
-    color: var(--text-color); /* Theme-based text color */
     background-color: var(--card-bg);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
