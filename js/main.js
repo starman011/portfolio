@@ -63,3 +63,15 @@ function applyTheme(theme) {
         document.body.classList.add('light-theme-active');
     }
 }
+
+// Hide loader once the page has fully loaded
+window.addEventListener('load', function() {
+    const loader = document.getElementById('loading-screen');
+    const content = document.getElementById('site-content');
+    if (loader) {
+        loader.style.display = 'none';
+    }
+    if (content) {
+        content.style.display = '';
+    }
+});
