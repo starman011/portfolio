@@ -157,5 +157,13 @@
 /* Styling for embedded LinkedIn posts */
 .linkedin-embed iframe {
     max-width: 100%;
-    border-radius: 50px;
+    border-radius: 30px;
+    height: 400px;
+}
+
+/* Card wrapper for embedded posts */
+.linkedin-embed .card {
+    background-color: var(--card-bg);
+    border-radius: 40px;
+    padding: 1rem;
 }
