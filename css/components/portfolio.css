@@ -20,9 +20,14 @@
     transition: all 0.3s ease;
 }
 
+.portfolio-tab.neon-btn {
+    border: 2px solid var(--neon-color);
+    border-bottom: 2px solid var(--neon-color);
+}
+
 .portfolio-tab.active {
-    color: var(--secondary-color);
-    border-bottom-color: var(--secondary-color);
+    color: var(--neon-color);
+    border-bottom-color: var(--neon-color);
 }
 
 .portfolio-item {
