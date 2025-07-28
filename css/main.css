@@ -113,3 +113,20 @@ p, span, div, a:not(.btn), label, li {
         font-size: 14px;
     }
 }
+
+/* Generic section layout for clear separation */
+.section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Card wrapper for each section */
+.section-card {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
