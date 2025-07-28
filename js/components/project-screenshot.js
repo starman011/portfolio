@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const img = card.querySelector('.project-snapshot');
     if (url && img) {
       // Thum.io expects the target URL directly in the path without encoding
-      img.src = `https://image.thum.io/get/${url}`;
+      // Append a timestamp to bypass caching and refresh the snapshot on each reload
+      const cacheBust = Date.now();
+      img.src = `https://image.thum.io/get/${url}?cacheBust=${cacheBust}`;
     }
   });
 });
