@@ -38,15 +38,15 @@
     color: #00224D;
     margin: 0 10px;
     transition: color 0.3s ease;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: clamp(28px, 7vw, 36px);
-    height: clamp(28px, 7vw, 36px);
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
     position: relative;
     /* Keep navigation pills beige regardless of theme */
     background-color: var(--beige) !important;
-    border-radius: 50%;
+    border-radius: 50px;
 }
 
 /* Animated underline for hover/active state */
@@ -209,8 +209,9 @@
 
 
 .nav-text {
-    display: none;
+    display: inline;
     transition: opacity 0.2s ease;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
@@ -250,8 +251,7 @@
         max-width: none;
     }
     .nav-link {
-        width: clamp(28px, 9vw, 36px);
-        height: clamp(28px, 9vw, 36px);
+        padding: 0.25rem 0.5rem;
     }
     .nav-item i {
         font-size: clamp(0.8rem, 4vw, 1rem);
@@ -282,8 +282,7 @@
         max-width: 360px;
     }
     .site-header.navbar-shrink .nav-link {
-        width: 28px;
-        height: 28px;
+        padding: 0.25rem 0.5rem;
     }
     .site-header.navbar-shrink .nav-item i {
         font-size: 0.9rem;
