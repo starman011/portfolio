@@ -12,6 +12,8 @@ body[data-theme="dark"] {
     --icon-color: #000;
     --nav-pill-bg: var(--beige);
 
+    --loader-color: var(--beige);
+
     --holo-gradient-1: none;
     --holo-gradient-2: none;
     --bg-opacity: 0;

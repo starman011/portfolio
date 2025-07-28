@@ -27,6 +27,13 @@
 </head>
 
 <body>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', saved);
+            document.body.setAttribute('data-theme', saved);
+        })();
+    </script>
 
     <div id="loading-screen">
         <div class="loader"></div>
