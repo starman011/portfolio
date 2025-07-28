@@ -165,8 +165,11 @@ html {
 
 body {
     scroll-snap-type: y mandatory;
+    overflow-y: scroll;
 }
 
 .section {
     scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
 }
