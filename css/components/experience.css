@@ -3,7 +3,6 @@
     position: relative;
     overflow: hidden;
     background-color: var(--alt-bg);
-    color: var(--alt-text);
 }
 
 .experience-section .section-title {
@@ -50,5 +49,5 @@
 .timeline-item span {
     display: block;
     font-size: 0.875rem;
-    color: var(--alt-text);
+    color: inherit;
 }

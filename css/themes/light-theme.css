@@ -1,7 +1,6 @@
 /* Light Theme Specific Styles */
 body[data-theme="light"] {
     --bg-color: var(--beige);
-    --text-color: var(--black);
     --primary-color: var(--black);
     --secondary-color: var(--red);
     --header-bg: rgba(245, 245, 220, 0.85);
@@ -17,7 +16,7 @@ body[data-theme="light"] {
     --holo-gradient-2: none;
     --bg-opacity: 0;
     --overlay-opacity: 0;
-    color: var(--text-color);
+    color: var(--black);
 }
 
 /* Ensure skill cards are readable in light theme */
@@ -31,4 +30,18 @@ body[data-theme="light"] #skills *,
 body[data-theme="light"] #experience,
 body[data-theme="light"] #experience * {
     color: var(--beige) !important;
+}
+
+/* Section text colors */
+body[data-theme="light"] .about-section,
+body[data-theme="light"] .hero,
+body[data-theme="light"] .portfolio-section,
+body[data-theme="light"] .contact-section,
+body[data-theme="light"] .footer {
+    color: var(--black);
+}
+
+body[data-theme="light"] .skills-section,
+body[data-theme="light"] .experience-section {
+    color: var(--beige);
 }
