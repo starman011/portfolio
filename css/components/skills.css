@@ -12,10 +12,10 @@
 
 .skill-card {
     background-color: var(--card-bg);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(245, 245, 220, 0.1);
-    border-radius: 0.5rem;
+    border-radius: 50px;
     padding: 1.5rem;
     height: 100%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);

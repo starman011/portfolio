@@ -32,7 +32,7 @@
 
 .portfolio-item {
     margin-bottom: 2rem;
-    border-radius: 0.5rem;
+    border-radius: 50px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -89,7 +89,7 @@
     -webkit-backdrop-filter: blur(10px);
     z-index: -1;
     border: 1px solid rgba(245, 245, 220, 0.1);
-    border-radius: 0.5rem;
+    border-radius: 50px;
 }
 
 .portfolio-category {
@@ -130,7 +130,7 @@
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(245, 245, 220, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 0.5rem;
+    border-radius: 50px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -157,5 +157,5 @@
 /* Styling for embedded LinkedIn posts */
 .linkedin-embed iframe {
     max-width: 100%;
-    border-radius: 8px;
+    border-radius: 50px;
 }
