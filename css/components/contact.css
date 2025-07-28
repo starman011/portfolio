@@ -18,9 +18,14 @@
 
 /* Limit width of contact card container */
 .contact-section .section-card {
-    max-width: 800px;
+    max-width: none; /* use container width */
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Space below section title */
+.contact-section .section-title {
+    margin-bottom: 2rem;
 }
 
 /* Apply glossy effect to contact cards */
