@@ -21,13 +21,13 @@
 }
 
 .portfolio-tab.neon-btn {
-    border: 2px solid var(--neon-color);
-    border-bottom: 2px solid var(--neon-color);
+    border: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .portfolio-tab.active {
-    color: var(--neon-color);
-    border-bottom-color: var(--neon-color);
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
 }
 
 .portfolio-item {
