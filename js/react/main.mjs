@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'https://esm.sh/react@17.0.2';
 import ReactDOM from 'https://esm.sh/react-dom@17.0.2';
 import { DarkModeSwitch } from 'https://esm.sh/react-toggle-dark-mode@1.1.1?deps=react@17.0.2,react-dom@17.0.2';
+import DotGrid from './DotGrid.mjs';
 
 function VisitCounter() {
   const [count, setCount] = useState(null);
@@ -94,6 +95,24 @@ function initReactWidgets() {
   const toggleEl = document.getElementById('dark-mode-toggle');
   if (toggleEl) {
     ReactDOM.render(React.createElement(ThemeToggle), toggleEl);
+  }
+  const gridEl = document.getElementById('dot-grid-root');
+  if (gridEl) {
+    ReactDOM.render(
+      React.createElement(DotGrid, {
+        dotSize: 10,
+        gap: 15,
+        baseColor: '#5227FF',
+        activeColor: '#5227FF',
+        proximity: 120,
+        shockRadius: 250,
+        shockStrength: 5,
+        resistance: 750,
+        returnDuration: 1.5,
+        style: { width: '100%', height: '100%' }
+      }),
+      gridEl
+    );
   }
 }
 
