@@ -4,12 +4,23 @@ const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const cors = require('cors');
 const crypto = require('crypto');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
 app.use(express.json());
 app.use(helmet());
-app.use(cors());
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || '').split(',').filter(Boolean);
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.length === 0 || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
+};
+app.use(cors(corsOptions));
 
 // Rate limiter to limit repeated requests to public APIs
 const limiter = rateLimit({
@@ -85,8 +96,8 @@ app.get('/api/count', async (req, res) => {
     }
 });
 
-// serve static files if needed
-app.use(express.static(__dirname + '/../'));
+// Serve static files from dedicated public directory
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server running on port ${port}`));
